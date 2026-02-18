@@ -1,0 +1,37 @@
+@use '../mixin/variables' as *;
+@use '../mixin/font' as *;
+@use '../mixin/btn' as *;
+@use '../mixin/animation' as *;
+@use '../mixin/over' as *;
+
+// .plan {
+//     background-color: $maincolor;
+
+//     &__wrapper {
+//         margin-inline: 240px;
+//         display: flex;
+//         // justify-content: space-between;
+//         align-items: center;
+//         gap:169px;
+//     }
+
+//     &__container {
+//         padding-right: 80px;
+//     }
+
+//     &__img {
+//         max-width: 370px;
+//     }
+// }
+.step__1 {
+    position: relative;
+}
+
+.floating {
+    position: relative;
+    border: 1px solid red
+}
+
+.steps {
+    background-color: $backgroundbler;
+}

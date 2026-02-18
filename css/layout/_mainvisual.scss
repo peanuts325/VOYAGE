@@ -1,0 +1,86 @@
+@use '../mixin/variables' as *;
+@use '../mixin/font' as *;
+@use '../mixin/btn' as *;
+@use '../mixin/animation' as *;
+@use '../mixin/over' as *;
+
+.mainvisual {
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    overflow: hidden;
+
+    // ここで呼び出し
+    //     &--wave {
+    //         background-image: url('../../img/wave_top_flat_white.svg');
+    //         background-position: center 105%; // 上端と下端に固定
+    //         background-size: contain;
+    //         padding-bottom: 100px;
+    //     }
+    // &--jn{
+    //         background-image: url('../../img/wave_jn_top_flat_white.svg');
+    //         background-position: center 105%; // 上端と下端に固定
+    //         background-size: contain;
+    //         padding-bottom: 100px;
+    // }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: $backgroundbler;
+    }
+
+    &__container {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column; // 縦に並べる
+        align-items: center; // 横方向中央
+        justify-content: center; // 縦方向中央
+        text-align: center;
+
+    }
+
+    &__logo {
+        // margin-bottom: 24px;
+        width: 25rem;
+
+        &--home {
+            width: 30rem;
+        }
+    }
+
+    &__heading {
+        color: $textcolor-sub;
+        font-size: 9.6rem;
+        @include title-mv;
+
+        &--home {
+            font-size: 6.4rem;
+            @include title-mv;
+        }
+    }
+}
+
+@media screen {
+    @media (max-width: 768px) {
+        .mainvisual {
+            &__heading {
+                font-size: 4.8rem;
+            }
+
+            &__container {
+                top: 50%;
+                left: 50%;
+            }
+        }
+    }
+}

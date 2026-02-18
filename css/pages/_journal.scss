@@ -1,0 +1,150 @@
+@use '../mixin/variables' as *;
+@use '../mixin/font' as *;
+@use '../mixin/btn' as *;
+@use '../mixin/animation' as *;
+@use '../mixin/over' as *;
+
+.jn__pickup {
+    background-color: $maincolor-journal;
+}
+
+.jn__list {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    column-gap: 7rem;
+    row-gap: 4rem;
+    margin: 0 auto;
+    padding-inline: 5%;
+}
+
+.jn__article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    row-gap: 1rem;
+
+    &:hover {
+        .jn__article-img {
+            transform: translate(0.5rem, 0.5rem);
+        }
+
+        .jn__article-text,
+        .jn__article-title {
+            background-size: 100% 1px;
+        }
+
+    }
+
+    &-link {
+        color: $textcolor-journal;
+        @include heading-sub;
+    }
+
+    &-figure {
+        display: inline-block;
+        box-shadow: 1rem 1rem rgba(31, 16, 47, 0.2);
+        @include rounded();
+    }
+
+
+    &-img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        @include rounded();
+        transition: all .3s ease-in;
+    }
+
+
+    &-upper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1rem 0;
+        font-size: 1.6rem;
+    }
+
+    &-cat {
+        border: 1px solid $textcolor-journal;
+        @include rounded(5rem);
+        padding: .5rem;
+    }
+
+    &-title {
+        margin-inline: 1rem;
+        font-size: 2.5rem;
+        @include underline-hover-alltext($textcolor-journal-sub);
+    }
+
+    &-text {
+        font-size: 1.7rem;
+        margin-inline: 1rem;
+        @include underline-hover-alltext($textcolor-journal-sub);
+    }
+
+}
+
+.jn__new {
+    background-color: rgba(255, 255, 255, 0.76);
+    position: relative;
+
+    .category__sort {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 1.5rem;
+        margin-bottom: 10rem;
+
+        .button {
+            color: $textcolor-sub;
+            background-color: $textcolor-journal-sub;
+            font-size: 2rem;
+            margin-inline: 4rem;
+            margin-bottom: 2rem;
+            border: 2px solid $textcolor-journal-sub;
+            padding: 1rem 2.7rem;
+            @include rounded(5rem);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: rgba($color: $backgroundcolor, $alpha: 0);
+            color: $textcolor-journal-sub;
+        }
+
+        .button.is-active {
+            background-color: $textcolor-journal-sub;
+            color: $textcolor-sub;
+        }
+    }
+
+}
+
+
+.hidden {
+    display: none;
+}
+
+.jn__article {
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .jn__new {
+        .category__sort {
+            .button {
+                margin-inline: 1rem;
+                padding: 1vw 2vw;
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .jn__list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}

@@ -1,0 +1,122 @@
+@use '../mixin/variables' as *;
+@use '../mixin/font' as *;
+@use '../mixin/btn' as *;
+@use '../mixin/animation' as *;
+@use '../mixin/over' as *;
+
+.scroll {
+    position: relative;
+}
+
+.scroll-section {
+    height: 100vh;
+    /* min-height: 800vh; */
+    /* position: sticky; */
+    top: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.floating-text {
+    position: absolute;
+    inset: 0;
+    /* wrapperの中央に配置 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 0;
+    /* カードより手前に */
+    pointer-events: none;
+    /* クリック干渉なし */
+    will-change: transform, filter, clip-path, opacity;
+}
+
+.floating-text p {
+    font-weight: 800;
+    line-height: 1.05;
+    text-align: center;
+    font-size: clamp(2.4rem, 7vw, 7.2rem);
+    letter-spacing: 0.02em;
+    color: $textcolor-sub;
+    text-shadow: 0 6px 24px rgba(0, 0, 0, .35);
+    margin: .08em 0;
+}
+
+.images-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+}
+
+.image-item {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 0 8px rgba(49, 49, 49, 0.35);
+    border: 1px solid rgb(128, 185, 182);
+
+}
+
+/* 初期位置：縦に並べる */
+.image-item:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+}
+
+.image-item:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+}
+
+.image-item:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    background: linear-gradient(45deg, #45b7d1, #96c93d);
+}
+
+.image-item:nth-child(4) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+}
+
+.image-item:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+}
+
+.image-item:nth-child(6) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: linear-gradient(45deg, #43e97b, #38f9d7);
+}
+
+.image-item:nth-child(7) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 7;
+    background: linear-gradient(45deg, #fa709a, #fee140);
+}

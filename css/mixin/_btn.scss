@@ -1,0 +1,345 @@
+@use "../mixin/variables" as *;
+@use "../mixin/over" as *;
+
+@mixin arrow($direction: right, $size: 1em, $thickness: 0.1em) {
+  display: inline-block;
+  vertical-align: middle;
+  color: currentColor;
+  line-height: 1;
+  position: relative;
+  width: $size;
+  height: $thickness;
+  background: currentColor;
+
+  &::before {
+    content: "";
+    width: $size * 0.65;
+    height: $size * 0.65;
+    border: $thickness solid currentColor;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+
+    @if $direction ==right {
+      border-left: 0;
+      border-bottom: 0;
+      transform: rotate(45deg);
+      transform-origin: top right;
+      right: -0.05em;
+    } @else if $direction ==left {
+      border-right: 0;
+      border-bottom: 0;
+      transform: rotate(-45deg);
+      transform-origin: top left;
+      left: -0.05em;
+    }
+  }
+}
+
+@mixin underline-hover($color: #000, $height: 1px, $duration: 0.4s) {
+  position: relative;
+  // display: inline-block;
+  width: fit-content; // これで中身の幅に合わせる
+  padding: 8px 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: $height;
+    background-color: $color;
+    width: 0%;
+    transition: width $duration ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+@mixin underline-hover-alltext($color: #000, $height: 2px, $duration: 0.4s) {
+  display: inline;
+  background-image: linear-gradient(to right, $color 0%, $color 100%);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.4s ease;
+
+  &:hover {
+    background-size: 100% 1px;
+  }
+}
+
+// cta button
+.btn-reserve {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding: 2rem 2rem;
+  border: 2px solid $btncolor-cta;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: $btncolor-cta;
+  text-decoration: none;
+  overflow: hidden;
+  width: 300px;
+  border-radius: 2rem;
+  text-align: center;
+
+  &--form {
+    width: 100%;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    transition: 1s;
+  }
+
+  .btn-wave {
+    position: absolute;
+    top: calc(100% + 25px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $btncolor-cta;
+    transition: 1s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: 0;
+      width: 100%;
+      height: 25px;
+      background: url("../../img/btn-wave2.svg");
+      animation: wave 0.5s linear infinite;
+    }
+  }
+}
+
+.btn-reserve:hover {
+  span {
+    color: white;
+  }
+
+  .btn-wave {
+    top: 0;
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: 120px;
+  }
+}
+
+// arrow buttom (find,voice)
+.arrow_box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 2rem 2rem 0;
+  position: relative;
+
+  &--voice {
+    position: absolute;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding-inline: 17.5%;
+  }
+}
+
+.prev-arrow,
+.next-arrow {
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  background: #9dc6c3;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.prev-arrow {
+  transform: rotate(180deg);
+  margin-right: 20px;
+}
+
+.prev-arrow::before,
+.next-arrow::before {
+  position: absolute;
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  border-right: 2px solid $textcolor-main;
+  border-top: 2px solid $textcolor-main;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 800px) {
+  .arrow_box {
+    margin: 0;
+
+    &--voice {
+      position: relative;
+      padding-inline: 7rem;
+      // justify-content: center;
+      // padding-inline: 2%;
+    }
+  }
+
+  // .prev-arrow,
+  // .next-arrow {
+  //     width: 50px;
+  //     height: 50px;
+  // }
+}
+
+// ===================================
+// btn journal  article,journal
+// ===================================
+.btn__journal {
+  color: $textcolor-journal;
+  border: 1px solid $textcolor-journal;
+  border-radius: 50px;
+  padding: 1.5rem 4rem;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $textcolor-journal;
+    color: $textcolor-sub;
+  }
+
+  &--back {
+    color: $textcolor-sub;
+    border: 1px solid $textcolor-sub;
+
+    &:hover {
+      background-color: $textcolor-sub;
+      color: $textcolor-journal;
+    }
+  }
+}
+
+.backbtn {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+  position: relative;
+  padding-inline: 5%;
+
+  &--article {
+    padding-bottom: 40rem;
+  }
+}
+
+// ====================================
+// btn circle  footer,plan,article
+// ====================================
+.totop {
+  position: absolute;
+  right: 0rem;
+  bottom: 5rem;
+
+  &--ft {
+    right: 10%;
+
+    @include tab {
+      position: relative;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.scrolldown {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+
+  &--plan {
+    bottom: 2%;
+    margin-left: 6rem;
+    right: 1vw;
+
+    @include tab {
+      display: none;
+    }
+  }
+}
+
+.block {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+  position: relative;
+  &:hover {
+    .arrow__go {
+      top: 45%;
+    }
+  }
+}
+
+.arrow__go {
+  color: $textcolor-footer;
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in;
+  &--article {
+    color: $textcolor-main;
+  }
+}
+
+.circleText {
+  overflow: visible;
+  animation: rotation 18s linear infinite;
+
+  &__circle {
+    fill: none;
+  }
+
+  &__text {
+    fill: $textcolor-footer;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+
+    &--article {
+      fill: $textcolor-main;
+      font-size: 2rem;
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@use '../mixin/variables' as *;
+@use '../mixin/font' as *;
+@use '../mixin/btn' as *;
+@use '../mixin/animation' as *;
+@use '../mixin/over' as *;
+
+// 波のpadding
+.wave-down-padding {
+    padding-top: 24rem;
+}
+
+.wave-up-padding {
+    padding-bottom: 44rem;
+
+    @media screen and (max-width: 768px) {
+        padding-bottom: 12rem;
+
+    }
+}
+
+// セクションタイトル
+.section {
+    width: 100%;
+
+    &__header {
+        text-align: center;
+        padding-block: 5.5rem;
+        margin-bottom: 8rem;
+
+        &--plan {
+            text-align: left;
+            padding-block: 0rem;
+            margin-bottom: 0rem;
+        }
+    }
+
+    &__icon {
+        max-width: 21.2rem;
+
+        &--plan {
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__title {
+        font-size: 4.8rem;
+        @include title;
+
+        &--plan {
+            font-size: 6.4rem;
+            line-height: 8rem;
+        }
+
+        &--features {
+            color: $textcolor-sub;
+        }
+    }
+
+    &__subtitle {
+        font-size: 2rem;
+        @include heading-sub;
+
+        &--plan {
+            font-size: 3.2rem;
+            margin-bottom: 5rem;
+        }
+
+        &--features {
+            color: $textcolor-sub;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        &__header {
+            padding-block: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        &__title {
+            font-size: 3.2rem;
+
+            &--plan {
+                line-height: 3rem;
+            }
+        }
+
+        &__subtitle {
+            font-size: 1.6rem;
+
+            &--plan {
+                margin-bottom: 3rem;
+            }
+        }
+
+        &__icon {
+            max-width: 15rem;
+
+            &--plan {
+                display: block;
+                margin-inline: auto;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section {
+        &__title {
+            font-size: 2.4rem;
+        }
+
+        &__subtitle {
+            font-size: 1.4rem;
+        }
+
+        &__icon {
+            max-width: 12rem;
+        }
+    }
+}

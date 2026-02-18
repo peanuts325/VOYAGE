@@ -1,0 +1,30 @@
+// ブレイクポイントの変数を定義
+$breakpoint-pc: 1210px;
+$breakpoint-tab: 768px;
+$breakpoint-sp: 480px; // 追加
+$breakpoint-smallsp: 320px; // 追加
+
+// Mixinの定義
+@mixin pc {
+    @media screen and (max-width: #{$breakpoint-pc}) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media screen and (max-width: #{$breakpoint-tab}) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media screen and (max-width: #{$breakpoint-sp}) {
+        @content;
+    }
+}
+
+@mixin smallsp {
+    @media screen and (max-width: #{$breakpoint-smallsp}) {
+        @content;
+    }
+}

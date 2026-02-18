@@ -1,0 +1,91 @@
+@use '../mixin/variables' as *;
+@use '../mixin/font' as *;
+@use '../mixin/btn' as *;
+@use '../mixin/animation' as *;
+@use '../mixin/over' as *;
+
+// =============================================== 
+// information
+// =============================================== 
+.info {
+    background-color: $maincolor;
+    position: relative;
+    padding-inline: 10%;
+
+    &--jn {
+        background-color: $maincolor-journal;
+    }
+
+   
+    &__box {
+        margin-inline: auto;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 2rem;
+        margin-bottom: 8rem;
+        padding: 4rem;
+        border: 1px solid $textcolor-main;
+        @include rounded(1rem);
+        max-width: 100rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__label {
+        font-size: 1.5rem;
+        padding: 0.4rem 1rem;
+        @include rounded(2rem);
+        @include heading-bold;
+        letter-spacing: 0.05rem;
+        background-color: $componentcolor-info;
+        color: $textcolor-sub;
+        width: 9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--jn {
+            background-color: $componentcolor-info-jouranal;
+        }
+    }
+
+    &__text {
+        font-size: 1.3rem;
+        @include heading-sub;
+    }
+
+    &__map {
+        border: 3px solid $textcolor-sub;
+        margin: 160px auto;
+        max-width: 1200px;
+        @include rounded(2.8rem);
+
+        iframe {
+            @include rounded(2.8rem);
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .wave {
+        width: 100%;
+        // border: solid 5px blue;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .info {
+        padding-inline: 5%;
+
+        &__box {
+            grid-template-columns: 1fr;
+            padding: 2rem;
+        }
+    }
+
+}

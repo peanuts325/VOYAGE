@@ -1,0 +1,283 @@
+@use "../mixin/variables" as *;
+@use "../mixin/font" as *;
+@use "../mixin/btn" as *;
+@use "../mixin/animation" as *;
+@use "../mixin/over" as *;
+
+// ===============================================
+// footer
+// ===============================================
+.footer {
+  text-shadow: 5px 2px 8px #5c4123;
+  background-color: $footer-background;
+  color: $textcolor-footer;
+  position: relative;
+  width: 100%;
+
+  &__inner {
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-inline: 5%;
+
+    @include tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__catchcopy {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 5rem;
+    padding-top: 5rem;
+    @include heading-bold;
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    @include tab {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__info {
+    text-align: center;
+    &-img {
+      width: 40rem;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(5px 2px 9px #3d2b17);
+    }
+
+    .phone-link {
+      display: block;
+      font-size: 3rem;
+      color: $textcolor-footer;
+      @include heading-bold;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      letter-spacing: 0.3rem;
+
+      // font-weight: bold;
+    }
+  }
+
+  &__nav {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem; // 行と列の間に余白
+    justify-items: start; // 各セルの中の要素を左寄せに
+    @include tab {
+      display: none;
+    }
+  }
+
+  &__column {
+    width: 100%;
+
+    h3 {
+      // overflow: none;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      color: $textcolor-footer;
+      font-size: 3rem;
+      @include heading-bold;
+      @include underline-hover($textcolor-sub);
+      letter-spacing: 3px;
+      // white-space: nowrap;
+      width: 100%;
+    }
+
+    ul {
+      li {
+        margin-bottom: 0.4rem;
+
+        a {
+          display: flex;
+          flex-direction: column;
+          color: $textcolor-footer;
+          margin-left: 1rem;
+          font-size: 2rem;
+          @include underline-hover($textcolor-sub);
+          @include heading-sub;
+          letter-spacing: 3px;
+
+          span {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .animated-button {
+    cursor: pointer;
+    position: relative;
+    padding: 2rem 4.9rem;
+    margin: 1rem 1rem;
+    background: #5c4123;
+    color: $textcolor-footer;
+    font-size: 2rem;
+    @include rounded(5rem);
+    transition: scale 0.5s ease;
+    box-shadow: 5px 2px 9px #3d2b17;
+  }
+
+  .animated-button::after {
+    content: "";
+    position: absolute;
+    left: 15%;
+    bottom: 20%;
+    height: 2px;
+    width: 0;
+    /* 初期状態は幅ゼロ */
+
+    /* 5pxの線を描いて、5px空ける（合計10px周期） */
+    background-image: linear-gradient(to right, #f3f0e8 50%, transparent 50%);
+    background-size: 10px 100%;
+    background-repeat: repeat-x;
+
+    /* アニメーションの設定 */
+    /* steps(10) にすることで、10段階でガタガタと幅が広がる */
+    transition: width 0.5s steps(10);
+  }
+
+  .animated-button:hover {
+    scale: 1.1;
+
+    &::after {
+      width: 70%;
+      /* ホバーで全幅へ */
+    }
+  }
+
+  &__sns {
+    // position: absolute;
+    display: flex;
+    // justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    z-index: 10;
+    right: -11%;
+    margin-bottom: 3rem;
+
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.fa-twitter {
+  color: $textcolor-footer;
+  font-size: 4.2rem;
+}
+
+.fa-instagram {
+  color: $textcolor-footer;
+  font-size: 4.2rem;
+}
+
+.fa-facebook {
+  color: $textcolor-footer;
+  font-size: 3.9rem;
+}
+
+.copyright {
+  text-align: center;
+  margin-inline: auto;
+  font-size: 0.75rem;
+  margin-top: 2rem;
+  padding-block: 2rem;
+  opacity: 0.7;
+}
+
+// @media screen and (max-width: 1210px) {
+//     .totop--ft {
+//         right: 10%;
+//     }
+
+//     .footer {
+//         &__sns {
+//             position: relative;
+//             right: 0;
+//         }
+
+//         &__container {
+//             flex-direction: column;
+//             align-items: center;
+//             flex-wrap: wrap;
+//             height: 50rem;
+//         }
+//     }
+
+// }
+
+// @media screen and (max-width: 768px) {
+//     .footer {
+//         .totop--ft {
+//             position: relative;
+//             right: 0;
+//             margin-top: 3rem;
+//         }
+
+//         &__inner {
+//             width: 100%;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//         }
+
+//         &__info {
+//             width: 100%;
+//             text-align: center;
+//             margin-bottom: 2rem;
+//             justify-content: center;
+
+//             &-img {
+//                 width: 20rem;
+//                 margin-bottom: 1rem;
+//             }
+
+//             p {
+//                 font-size: 1.2rem;
+//                 line-height: 2rem;
+//             }
+//         }
+
+//         &__container {
+//             width: 100%;
+//             flex-direction: column;
+//             align-items: center;
+//             height: 30rem;
+//             margin-bottom: 3rem;
+//         }
+
+//         &__nav {
+//             display: none;
+//         }
+
+//         &__sns {
+//             position: relative;
+//         }
+//     }
+// }

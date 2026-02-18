@@ -1,0 +1,96 @@
+// // ==========================================
+// // 1. 設定値
+// // ==========================================
+// :root {
+//     /* 本文の最小(スマホ)と最大(PC) */
+//     --font-size-base-min: 1rem; // 16px
+//     --font-size-base-max: 1.125rem; // 18px
+
+//     /* 共通の行間 */
+//     --line-height-standard: 1.7;
+//     --line-height-tight: 1.3;
+// }
+
+// // ==========================================
+// // 2. 自動計算
+// // ==========================================
+// :root {
+//     /* 本文：画面幅に合わせて16px〜18pxを動く */
+//     --font-size-base: clamp(var(--font-size-base-min), 0.9rem + 0.5vw, var(--font-size-base-max));
+
+//     /* 見出し：本文のサイズをベースに掛け算で計算（一貫性が出る） */
+//     --font-size-h2: calc(var(--font-size-base) * 1.6); // スマホ約25px / PC約28px
+//     --font-size-h3: calc(var(--font-size-base) * 1.3); // スマホ約20px / PC約23px
+// }
+
+// // ==========================================
+// // 3. 適用（
+// // ==========================================
+// body {
+//     font-size: var(--font-size-base);
+//     line-height: var(--line-height-standard);
+// }
+
+// h2 {
+//     font-size: var(--font-size-h2);
+//     line-height: var(--line-height-tight);
+// }
+
+// h3 {
+//     font-size: var(--font-size-h3);
+// }
+
+
+@mixin heading-sub {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+}
+
+@mixin heading-bold {
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+}
+
+@mixin subtitle {
+    font-family: "Crimson Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.2rem;
+}
+
+@mixin title {
+    font-family: "Crimson Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 1.5rem;
+
+    @media screen and (max-width: 768px) {
+        letter-spacing: 0.5rem;
+    }
+}
+
+@mixin title-mv {
+    font-family: "Crimson Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.09rem;
+
+    @media screen and (max-width: 768px) {
+        letter-spacing: 0.03rem;
+    }
+}
+
+@mixin image-shadow($x: 1rem, $y: 1rem, $blur: .2rem, $color: rgba(0, 0, 0, 0.25)) {
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin rounded($radius: 2rem) {
+    border-radius: $radius;
+}

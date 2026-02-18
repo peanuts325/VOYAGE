@@ -1,0 +1,35 @@
+// ----------------------
+// Mixin（変数・関数など）
+// ----------------------
+@use './mixin/variables' as *;
+@use './mixin/font' as *;
+@use './mixin/btn' as *;
+@use './mixin/animation' as *;
+@use './mixin/over' as *;
+
+// ----------------------
+// ベーススタイル
+// ----------------------
+
+@use './base/base';
+
+// ----------------------
+// レイアウト
+// ----------------------
+@use './layout/header';
+@use './layout/footer';
+@use './layout/info';
+@use './layout/mainvisual';
+@use './layout/section-header';
+@use './layout/split-section';
+@use './layout/scroll';
+
+// ----------------------
+// ページごとのスタイル
+// ----------------------
+@use './pages/about';
+@use './pages/index';
+@use './pages/journal';
+@use './pages/contact';
+@use './pages/service';
+@use './pages/article';

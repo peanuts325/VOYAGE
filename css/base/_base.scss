@@ -1,0 +1,85 @@
+@use '../mixin/variables' as *;
+@use '../mixin/font' as *;
+@use '../mixin/btn' as *;
+@use '../mixin/animation' as *;
+@use '../mixin/over' as *;
+
+// :root {
+// }
+
+html,
+body {
+    color-scheme: light;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 62.5%;
+    // 1rem = 10px
+    box-sizing: border-box;
+
+    @include pc {
+        font-size: 56.25%;
+        /* 1rem = 9px */
+    }
+
+    @include tab {
+        font-size: 50%;
+        /* 1rem = 8px */
+    }
+
+    @include sp {
+        font-size: 43.75%;
+        /* 1rem = 7px */
+    }
+
+    @include smallsp {
+        font-size: 30.5%;
+        /* 1rem = 6px */
+    }
+}
+
+.inter-400 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: $textcolor-main;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+    // white-space: normal;
+}
+
+h1 {
+    line-height: 1px;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+//波
+// 直前のセクションの下に入れる
+.wave-top {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+// 次のセクションの頭
+.wave-bottom {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}

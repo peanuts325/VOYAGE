@@ -8,9 +8,6 @@ $(function () {
         $("header").toggleClass("open");
     });
 
-
-
-
     // メニューが表示されている時に画面をクリックした場合
     $('.mask').on('click', function () {
         // openクラスを削除して、メニューを閉じる
@@ -23,7 +20,7 @@ $(function () {
 });
 
 /*=================================================
-PICK UP スワイパー
+PICK UP スワイパー  GSAP
 ===================================================*/
 $(function () {
     const slider = document.querySelector('.swiper');
@@ -172,13 +169,14 @@ $(function () {
 
 
 /*=================================================
-FIND/voice スライダー
+FIND/voice スライダー jQuery（＋Slick）
 ===================================================*/
 $(function () {
 
     $('.find__content.slider').slick({
         variableWidth: true, // 4th slide partly visible
         slidesToScroll: 1,
+        centerMode: true,
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: true,
@@ -192,7 +190,7 @@ $(function () {
                     variableWidth: false, // 幅可変をOFF
                     slidesToShow: 1,      // 常に1枚だけ表示
                     centerMode: true,     // 中央寄せにする（必要なら）
-                    centerPadding: '0'    // 余白なく中央配置
+                    centerPadding: '40px'    // 余白なく中央配置
                 }
             }
         ]
@@ -222,7 +220,7 @@ $(function () {
 
 
 // =================================================
-// Parallax .feature
+// Parallax .feature GSAP（ScrollTrigger）
 // =================================================
 
 // OSで「動きを減らす」がオンならアニメ無効
@@ -321,7 +319,7 @@ if (!reduce) {
 
 
 // =================================================
-// jn__new ボタンクリックで色変化
+// jn__new ボタンクリックで色変化 jQuery
 // =================================================
 $(function () {
     $('.button').on('click', function () {
@@ -334,7 +332,7 @@ $(function () {
 
 
 // =================================================
-// scroll animation
+// scroll animation GSAP（ScrollTrigger）
 // =================================================
 gsap.registerPlugin(ScrollTrigger);
 
@@ -437,7 +435,7 @@ document.addEventListener('DOMContentLoaded', init);
 window.addEventListener('resize', () => { ScrollTrigger.refresh(); });
 
 // =================================================
-// jn__new 「もっと見る」ボタン
+// jn__new 「もっと見る」ボタン GSAP（ScrollToPlugin）＋JS
 // =================================================    
 gsap.registerPlugin(ScrollToPlugin);
 

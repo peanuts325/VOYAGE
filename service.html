@@ -9,81 +9,82 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body class="inter-400">
-
     <!-- =============================================== -->
     <!-- ヘッダー -->
     <!-- =============================================== -->
     <header class="header" id="header">
+        <div class="overlay"></div>
         <!-- ===============ロゴ ===============-->
-        <h1 class="header__logo">
+        <h1>
             <a href="index.html">
-                <img src="img/logo.blue.png" alt="VOYAGEロゴ" />
+                <img src="img/logo.white.svg" alt="VOYAGEロゴ" />
             </a>
         </h1>
         <nav class="nav">
             <!-- ===============ナビゲーション=============== -->
             <ul class="nav__list">
-                <li class="nav__item"><a href="about.html" class="nav__link hover_line">ABOUT</a></li>
-                <li class="nav__item"><a href="service.html" class="nav__link  hover_line">SERVICE</a></li>
-                <li class="nav__item"><a href="VOYAJournal.html" class="nav__link  hover_line">VOYA JOURNAL</a></li>
-                <li class="nav__item"><a href="contact.html" class="nav__link  hover_line">CONTACT</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link hover_line ">ABOUT</a></li>
+                <li class="nav__item"><a href="service.html" class="nav__link  hover_line ">SERVICE</a></li>
+                <li class="nav__item"><a href="journal.html" class="nav__link  hover_line ">JOURNAL</a>
+                </li>
+                <li class="nav__item"><a href="contact.html" class="nav__link  hover_line ">CONTACT</a></li>
             </ul>
-            <!-- ===============hamberger menu　ハンバーガーメニュー=============== -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
+        <!-- ===============hamberger menu　ハンバーガーメニュー=============== -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
         <!-- ===============hamberger menu　open　ハンバーガーメニューが押されたとき=============== -->
         <div class="menu js-menu">
             <nav class="menu__nav">
                 <ul class="menu__list">
-                    <div class="menu__column">
-                        <li class="menu__item"><a class="menu__link" href="index.html">HOME</a></li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="about.html">ABOUT</a>
-                            <ul class="menu__sublist">
-                                <li class="menu__subitem"><a href="about.html#concept" class="menu__sublink">CONCEPT -
-                                        コンセプト</a></li>
-                                <li class="menu__subitem"><a href="about.html#mission" class="menu__sublink">MISSION -
-                                        想い</a></li>
-                                <li class="menu__subitem"><a href="about.html#voice" class="menu__sublink">VOICES -
-                                        お客様の声</a></li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="menu__column">
-                        <li class="menu__item"><a class="menu__link" href="service.html">SERVICE</a></li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="VOYAJournal.html">VOYA JOURNAL</a>
-                            <ul class="menu__sublist">
-                                <li class="menu__subitem"><a href="VOYAJournal.html#pickup" class="menu__sublink">PICK
-                                        UP - ピックアップ</a></li>
-                                <li class="menu__subitem"><a href="VOYAJournal.html#new" class="menu__sublink">NEW -
-                                        新着情報</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu__item"><a class="menu__link" href="contact.html">CONTACT</a></li>
-                    </div>
+                    <li class="menu__item"><a class="menu__link" href="index.html">HOME</a></li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="about.html">ABOUT</a>
+                        <ul class="menu__sublist">
+                            <li class="menu__subitem"><a href="about.html#concept" class="menu__sublink">
+                                    コンセプト</a></li>
+                            <li class="menu__subitem"><a href="about.html#mission" class="menu__sublink">MISSION
+                                    -
+                                    想い</a></li>
+                            <li class="menu__subitem"><a href="about.html#voice" class="menu__sublink">
+                                    お客様の声</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__item"><a class="menu__link" href="service.html">SERVICE</a></li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="journal.html">JOURNAL</a>
+                        <ul class="menu__sublist">
+                            <li class="menu__subitem"><a href="journal.html#pickup" class="menu__sublink">PICK
+                                    UP - ピックアップ</a></li>
+                            <li class="menu__subitem"><a href="journal.html#new" class="menu__sublink">NEW -
+                                    新着情報</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__item"><a class="menu__link" href="contact.html">CONTACT</a></li>
                 </ul>
-
+                <div class="menu__sns">
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
             </nav>
         </div>
-        <div class="mask js-mask"></div>
     </header>
-
 
     <!-- =============================================== -->
     <!-- メイン -->
@@ -91,13 +92,13 @@
     <main>
         <!-- ===============メインビジュアル=============== -->
         <section class="mainvisual">
-            <img class="mainvisual__img" src="img/service_mainvisual.jpg" alt="">
+            <img class="mainvisual__img" src="img/service_mainvisual.webp" alt="">
             <div class="mainvisual__container">
-                <img class="mainvisual__logo" src="img/logo.white.png" alt="">
+                <img class="mainvisual__logo" src="img/logo.white.svg" alt="">
                 <h3 class="mainvisual__heading">SERVICE<br>
                 </h3>
             </div>
-            <img class="wave-top" src="img/wave_top_flat_white.png" alt="">
+            <img class="wave-top" src="img/wave_top_flat_white.svg" alt="">
         </section>
 
 
@@ -108,17 +109,20 @@
 
         <section class="plan split-section split-section--plan">
             <div class="split-section__wrapper split-section__wrapper--plan">
-                <img src="img/logo.icon.blue.png" alt="アイコン" class="section__icon section__icon--plan">
+                <img src="img/logo.icon.blue.svg" alt="アイコン" class="section__icon section__icon--plan">
                 <div class="split-section__content split-section__content--plan">
                     <header class="split-section__left split-section__left--plan">
                         <h2 class="section__title section__title--plan">Plan</h2>
                         <h2 class="section__title section__title--plan">Your</h2>
                         <h2 class="section__title section__title--plan">Journey</h2>
                         <p class="section__subtitle section__subtitle--plan">旅の作り方</p>
-                        <a href="contact.html#contact" class="btn-reserve btn-reserve--plan">無料相談はこちら</a>
+                        <a href="contact.html#contact" class="btn-reserve btn-reserve--plan">
+                            <span>無料相談を予約する</span>
+                            <div class="btn-wave"></div>
+                        </a>
                     </header>
                     <div class="split-section__right">
-                        <img class="split-section__right__img" src="img/family.jpg" alt="">
+                        <img class="split-section__right__img" src="img/family.webp" alt="">
                         <div class="split-section__right__textbox">
                             <p class="split-section__text">
                                 VOYAGEでは、専任プランナーがご希望に合わせてあなただけの島旅をデザインいたします。まずは理想の旅のイメージをお聞かせください。</p>
@@ -143,7 +147,7 @@
 
         <section class="step__1 steps">
             <div class="split-section__wrapper split-section__wrapper--step wave-down-padding">
-                <img class="wave-bottom" src="img/wave_bottom_flat_shade_gold.png" alt="">
+                <img class="wave-bottom" src="img/wave_bottom_flat_shade_gold.svg" alt="">
                 <div class="split-section__content split-section__content--step">
                     <div class="split-section__textbox split-section__textbox--step">
                         <h3 class="split-section__catchcopy split-section__catchcopy--step"><span>Step1</span> <br>ヒアリング
@@ -154,10 +158,10 @@
                             ご希望の目的地、ご予算、旅のペースなどをお伺いし、理想の島旅のイメージを共有します。
                         </p>
                     </div>
-                    <img src="img/service_counseling.jpg" alt="写真" class="split-section__img split-section__img--step">
+                    <img src="img/service_counseling.webp" alt="写真" class="split-section__img split-section__img--step">
                 </div>
             </div>
-            <img class="wave_line" src="img/wave_topleft_line.png" alt="">
+            <img class="wave_line" src="img/wave_topleft_line.svg" alt="">
         </section>
         <section class="step__2 steps">
             <div class="split-section__wrapper split-section__wrapper--step">
@@ -172,10 +176,10 @@
                             宿・交通・アクティビティ・食事まで、島ごとの魅力を組み合わせて、ぴったりなプランに仕上げていきます。
                         </p>
                     </div>
-                    <img src="img/service_planning.jpg" alt="写真" class="split-section__img split-section__img--step">
+                    <img src="img/service_planning.webp" alt="写真" class="split-section__img split-section__img--step">
                 </div>
             </div>
-            <img class="wave_line" src="img/wave_topright_line.png" alt="">
+            <img class="wave_line" src="img/wave_topright_line.svg" alt="">
         </section>
         <section class="step__3 steps">
             <div class="split-section__wrapper split-section__wrapper--step">
@@ -191,10 +195,10 @@
                             初めての島旅でも、安心して出かけられるようにお手伝いします。
                         </p>
                     </div>
-                    <img src="img/service_lggage.jpg" alt="写真" class="split-section__img split-section__img--step">
+                    <img src="img/service_lggage.webp" alt="写真" class="split-section__img split-section__img--step">
                 </div>
             </div>
-            <img class="wave_line" src="img/wave_topleft_line.png" alt="">
+            <img class="wave_line" src="img/wave_topleft_line.svg" alt="">
         </section>
         <section class="step__4 steps">
             <div class="split-section__wrapper split-section__wrapper--step">
@@ -208,10 +212,10 @@
                             VOYAGEのサポートは、現地でもオンラインで続きます。何かあればいつでもご相談ください。
                         </p>
                     </div>
-                    <img src="img/service_departure.jpg" alt="写真" class="split-section__img split-section__img--step">
+                    <img src="img/service_departure.webp" alt="写真" class="split-section__img split-section__img--step">
                 </div>
             </div>
-            <img class="wave_line" src="img/wave_topleft_line.png" alt="">
+            <img class="wave_line" src="img/wave_topleft_line.svg" alt="">
         </section>
 
         <!-- =============================================== -->
@@ -220,20 +224,20 @@
         <section class="scroll steps">
             <div class="scroll-section">
                 <div class="images-wrapper">
-                    <img src="img/scroll(1).jpg" class="image-item">
-                    <img src="img/scroll(2).jpg" class="image-item">
-                    <img src="img/scroll(3).jpg" class="image-item">
-                    <img src="img/scroll(4).jpg" class="image-item">
-                    <img src="img/scroll(6).jpg" class="image-item">
-                    <img src="img/scroll(3).jpg" class="image-item">
-                    <img src="img/scroll(5).jpg" class="image-item">
+                    <img src="img/scroll(1).webp" class="image-item">
+                    <img src="img/scroll(2).webp" class="image-item">
+                    <img src="img/scroll(3).webp" class="image-item">
+                    <img src="img/scroll(4).webp" class="image-item">
+                    <img src="img/scroll(6).webp" class="image-item">
+                    <img src="img/scroll(3).webp" class="image-item">
+                    <img src="img/scroll(5).webp" class="image-item">
                     <div class="floating-text ">
                         <p>あなただけの旅が</p>
                         <p>ここにある</p>
                     </div>
                 </div>
             </div>
-            <img src="img/wave_top_flat_white.png" alt="" class="wave-top">
+            <img src="img/wave_top_flat_white.svg" alt="" class="wave-top">
         </section>
 
         <!-- =============================================== -->
@@ -241,7 +245,7 @@
         <!-- =============================================== -->
         <section class="info  wave-up-padding">
             <header class="section__header">
-                <img src="img/logo.icon.blue.png" alt="アイコン" class="section__icon">
+                <img src="img/logo.icon.blue.svg" alt="アイコン" class="section__icon">
                 <h2 class="section__title">IMFORMATION</h2>
                 <p class="section__subtitle">ご連絡先</p>
             </header>
@@ -269,7 +273,7 @@
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <img src="img/wavefooter.png" alt="" class="wave-top">
+            <img src="img/wavefooter.svg" alt="" class="wave-top">
         </section>
     </main>
 
@@ -277,76 +281,68 @@
     <!-- フッター -->
     <!-- =============================================== -->
     <footer class="footer">
-
-        <div class="footer__wrapper">
-            <div class="footer__inner">
-                <h2 class="footer__catchcopy">あなたの旅は、まだ見ぬ物語。</h2>
-                <div class="footer__container">
-                    <div class="footer__info">
-                        <div class="center">
-                            <img class="footer__info-img" src="img/logo.white.png" alt="VOYAGEロゴ" />
-                            <p>TEL 03-4567-8910</p>
-                            <p>東京都渋谷区神宮前6丁目16-28</p>
-                            <p>グラスシティ渋谷 6F</p>
-                            <p>平日 10:00〜18:00（土日祝休）</p>
-                        </div>
+        <div class="footer__inner">
+            <h2 class="footer__catchcopy">あなたの旅は、まだ見ぬ物語。</h2>
+            <div class="footer__container">
+                <div class="footer__info">
+                    <img class="footer__info-img" src="img/logo.white.svg" alt="VOYAGEロゴ" />
+                    <a href="tel:0312341234" class="phone-link">TEL 03-1234-1234</a>
+                    <p>東京都渋谷区神宮前6丁目16-28</p>
+                    <p>グラスシティ渋谷 6F</p>
+                    <p>平日 10:00〜18:00（土日祝休）</p>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__column">
+                        <a href="about.html">
+                            <h3 class="footer__menuitem">ABOUT</h3>
+                        </a>
+                        <ul>
+                            <li><a href="about.html#concept">CONCEPT <span>コンセプト</span></a></li>
+                            <li><a href="about.html#mission">MISSION <span>想い</span></a></li>
+                            <li><a href="about.html#voice">VOICES <span>お客様の声</span></a></li>
+                        </ul>
                     </div>
-
+                    <div class="footer__column">
+                        <a href="journal.html">
+                            <h3 class="footer__menuitem">JOURNAL</h3>
+                        </a>
+                        <ul>
+                            <li><a href="#pickup">PICK UP<span>ピックアップ</span></a></li>
+                            <li><a href="#new">NEW<span>新着情報</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <a href="service.html">
+                            <h3 class="footer__menuitem">SERVICE</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__link">
                     <div class="footer__sns">
                         <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     </div>
-                    <div class="footer__nav">
-                        <div class="footer__column">
-                            <a href="about.html">
-                                <h3 class="footer__menuitem">ABOUT</h3>
-                            </a>
-                            <ul>
-                                <li><a href="about.html#concept">CONCEPT - コンセプト</a></li>
-                                <li><a href="about.html#mission">MISSION - 想い</a></li>
-                                <li><a href="about.html#voice">VOICES - お客様の声</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__column">
-                            <a href="VOYAJournal.html">
-                                <h3 class="footer__menuitem">VOYA Journal</h3>
-                            </a>
-                            <ul>
-                                <li><a href="#pickup">PICK UP - ピックアップ</a></li>
-                                <li><a href="#new">NEW - 新着情報</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__column">
-                            <a href="service.html">
-                                <h3 class="footer__menuitem">SERVICE</h3>
-                            </a>
-                        </div>
-                        <div class="footer__column">
-                            <a href="contact.html">
-                                <h3 class="footer__menuitem">CONTACT</h3>
-                            </a>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="totop totop--ft">
-                    <a class="block" href="#top">
-                        <p class="arrow__go">↑</p>
-                        <div class="totop__container">
-                            <svg class="circleText" viewBox="0 0 100 100">
-                                <path id="circle" class="circleText__circle" d="M 0 50 A 50 50 0 1 1 0 51 z" />
-                                <text class="circleText__text">
-                                    <textpath xlink:href="#circle">GO BACK TO THE TOP GO BACK TO THE TOP</textpath>
-                                </text>
-                            </svg>
-                        </div>
+                    <a href="contact.html" class="animated-button">
+                        CONTACT
                     </a>
                 </div>
             </div>
-            <p class="copyright">&copy; VOYAGE</p>
+            <div class="totop totop--ft">
+                <a class="block" href="#top">
+                    <p class="arrow__go">↑</p>
+                    <div class="totop__container">
+                        <svg class="circleText" viewBox="0 0 100 100">
+                            <path id="circle" class="circleText__circle" d="M 0 50 A 50 50 0 1 1 0 51 z" />
+                            <text class="circleText__text">
+                                <textpath xlink:href="#circle">GO BACK TO THE TOP GO BACK TO THE TOP</textpath>
+                            </text>
+                        </svg>
+                    </div>
+                </a>
+            </div>
         </div>
+        <p class="copyright">&copy; VOYAGE</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>

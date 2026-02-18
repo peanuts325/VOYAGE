@@ -7,7 +7,6 @@
     <title>VOYAGE | article</title>
     <meta name="description" content="VOYAGEのABOUTページ。島専門の旅行企画会社VOYAGEについてご紹介します。">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
@@ -16,7 +15,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-aesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body class="inter-400">
@@ -25,64 +25,66 @@
     <!-- ヘッダー -->
     <!-- =============================================== -->
     <header class="header" id="header">
+        <div class="overlay"></div>
         <!-- ===============ロゴ ===============-->
-        <h1 class="header__logo">
+        <h1>
             <a href="index.html">
-                <img src="img/logo.blue.png" alt="VOYAGEロゴ" />
+                <img src="img/logo.white.svg" alt="VOYAGEロゴ" />
             </a>
         </h1>
         <nav class="nav">
             <!-- ===============ナビゲーション=============== -->
             <ul class="nav__list">
-                <li class="nav__item"><a href="about.html" class="nav__link hover_line">ABOUT</a></li>
-                <li class="nav__item"><a href="service.html" class="nav__link  hover_line">SERVICE</a></li>
-                <li class="nav__item"><a href="VOYAJournal.html" class="nav__link  hover_line">VOYA JOURNAL</a></li>
-                <li class="nav__item"><a href="contact.html" class="nav__link  hover_line">CONTACT</a></li>
+                <li class="nav__item"><a href="about.html" class="nav__link hover_line ">ABOUT</a></li>
+                <li class="nav__item"><a href="service.html" class="nav__link  hover_line ">SERVICE</a></li>
+                <li class="nav__item"><a href="journal.html" class="nav__link  hover_line ">JOURNAL</a>
+                </li>
+                <li class="nav__item"><a href="contact.html" class="nav__link  hover_line ">CONTACT</a></li>
             </ul>
-            <!-- ===============hamberger menu　ハンバーガーメニュー=============== -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
+        <!-- ===============hamberger menu　ハンバーガーメニュー=============== -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
         <!-- ===============hamberger menu　open　ハンバーガーメニューが押されたとき=============== -->
         <div class="menu js-menu">
             <nav class="menu__nav">
                 <ul class="menu__list">
-                    <div class="menu__column">
-                        <li class="menu__item"><a class="menu__link" href="index.html">HOME</a></li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="about.html">ABOUT</a>
-                            <ul class="menu__sublist">
-                                <li class="menu__subitem"><a href="about.html#concept" class="menu__sublink">CONCEPT -
-                                        コンセプト</a></li>
-                                <li class="menu__subitem"><a href="about.html#mission" class="menu__sublink">MISSION -
-                                        想い</a></li>
-                                <li class="menu__subitem"><a href="about.html#voice" class="menu__sublink">VOICES -
-                                        お客様の声</a></li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="menu__column">
-                        <li class="menu__item"><a class="menu__link" href="service.html">SERVICE</a></li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="VOYAJournal.html">VOYA JOURNAL</a>
-                            <ul class="menu__sublist">
-                                <li class="menu__subitem"><a href="VOYAJournal.html#pickup" class="menu__sublink">PICK
-                                        UP - ピックアップ</a></li>
-                                <li class="menu__subitem"><a href="VOYAJournal.html#new" class="menu__sublink">NEW -
-                                        新着情報</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu__item"><a class="menu__link" href="contact.html">CONTACT</a></li>
-                    </div>
+                    <li class="menu__item"><a class="menu__link" href="index.html">HOME</a></li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="about.html">ABOUT</a>
+                        <ul class="menu__sublist">
+                            <li class="menu__subitem"><a href="about.html#concept" class="menu__sublink">
+                                    コンセプト</a></li>
+                            <li class="menu__subitem"><a href="about.html#mission" class="menu__sublink">MISSION
+                                    -
+                                    想い</a></li>
+                            <li class="menu__subitem"><a href="about.html#voice" class="menu__sublink">
+                                    お客様の声</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__item"><a class="menu__link" href="service.html">SERVICE</a></li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="journal.html">JOURNAL</a>
+                        <ul class="menu__sublist">
+                            <li class="menu__subitem"><a href="journal.html#pickup" class="menu__sublink">PICK
+                                    UP - ピックアップ</a></li>
+                            <li class="menu__subitem"><a href="journal.html#new" class="menu__sublink">NEW -
+                                    新着情報</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__item"><a class="menu__link" href="contact.html">CONTACT</a></li>
                 </ul>
-
+                <div class="menu__sns">
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
             </nav>
         </div>
-        <div class="mask js-mask"></div>
     </header>
 
 
@@ -90,136 +92,84 @@
     <!-- メイン -->
     <!-- =============================================== -->
     <main>
-        <div class="side">
-            <p class="sideway">JORNAL</p>
+        <div class="bg-mask">
+            <div class="side">
+                <p class="sideway">JORNAL</p>
+            </div>
+            <!-- ===============face=============== -->
+            <section class="face">
+                <img class="mainvisual__img" src="img/beach-article.webp" alt="">
+                <div class="face__wrapper article-wapper">
+                    <div class="face__wrapper-top">
+                        <h2 class="face__title">崖の先にあった</h2>
+                        <h2 class="face__title">青すぎる世界</h2>
+                    </div>
+                    <div class="face__wrapper-bottom">
+                        <p class="hashtag">#絶景</p>
+                        <p class="date">2025.05.07</p>
+                    </div>
+                </div>
+            </section>
+            <section class="episode article-wapper">
+                <div class="story">
+                    <h3 class="story__heading">ー旅の始まり</h3>
+                    <p class="story__text">　あれは、ギリシャの小さな島を訪れたときのこと。
+                        観光地としてはあまり知られていないその島は、街も静かで、レストランも数えるほど。
+                    </p>
+                    <p class="story__text">
+                        Googleマップにはビーチの名前がいくつか出ていたけれど、どこも少し遠く、どうしようかと迷っていたとき、宿のオーナーである年配のご夫婦が「観光客はあまり行かないけれど、いい場所があるよ」と教えてくれたのです。
+                    </p>
+                    <p class="story__text">
+                        「舗装はされていないから歩きにくいかもしれない。でも、誰もいないし、波の音だけだよ。」
+                        オーナーのその言葉に、私はすぐに惹かれました。</p>
+                </div>
+                <div class="story">
+                    <h3 class="story__heading">ー朝の準備</h3>
+                    <p class="story__text">
+                        翌朝、小さなパンを紙袋に入れてもらい、水のボトルを片手に、オーナーが描いてくれた手書きの地図を頼りに歩き出しました。
+                    </p>
+                    <p class="story__text">
+                        観光客向けの道ではなく、地元の人しか知らないような細い坂道。
+                    </p>
+                    <p class="story__text">
+                        すれ違うのは犬を散歩させるおばあさんくらいで、途中、ヤギが何頭も岩の上からこちらを見下ろしていたのを今でも覚えています</p>
+                </div>
+                <div class="story">
+                    <h3 class="story__heading">ー秘密のビーチ</h3>
+                    <p class="story__text">
+                        しばらく歩いて、視界がぱっと開けた先に、それはありました。名前も、看板もない小さな入り江。 海は透明すぎて、足元の石の形までくっきり見えました。
+                        砂浜というよりは、小石混じりの静かな岸辺。</p>
+                    <p class="story__text">
+                        だれもいない。音がしない。波のさざめきと、風の音だけ。
+                        私はしばらく、なにも考えずにその場に座りました。 スマホを出して写真を撮る気にもならず、ただ海を見つめていました。
+                    </p>
+                    <p class="story__text">
+                        旅に出る前は、何か特別なことがしたいと思っていたけれど、この「何もない時間」こそが、旅のなかでいちばん贅沢なものなのだと、そのとき初めて気づいたのです。</p>
+                </div>
+                <div class="story">
+                    <h3 class="story__heading">ー忘れられない場所</h3>
+                    <p class="story__text">
+                        その後、島に滞在していた間、何度かそのビーチを訪れました。誰かに会ったことは、一度もありません。でも、それがよかった。
+                    </p>
+                    <p class="story__text">
+                        私の中では、あの場所は「島がこっそり見せてくれた秘密」のような感覚で、今でもときどき、ふと目を閉じるとあの静けさがよみがえってきます。
+                    </p>
+                    <p class="story__text">
+                        旅先で誰かに親切にしてもらったこと。観光地ではない、けれど大切に守られている場所を教えてもらったこと。スマホに残っていないのに、心に強く残っている景色。そんな旅の記憶が、VOYAGEにはある気がします。
+                    </p>
+                </div>
+            </section>
+            <section class="backbtn backbtn--article">
+                <a href="journal.html" class="btn__journal btn__journal--back">記事一覧に戻る</a>
+                <img src="img/wave_top_flat_shade_gold.svg" alt="" class="wave-top">
+            </section>
         </div>
-        <!-- ===============face=============== -->
-        <section class="face">
-            <img class="mainvisual__img" src="img/beach-article.jpg" alt="">
-            <div class="face__wrapper">
-                <div class="face__wrapper-top">
-                    <h2 class="face__title">崖の先にあった</h2>
-                    <h2 class="face__title">青すぎる世界</h2>
-                </div>
-                <div class="face__wrapper-bottom">
-                    <p class="hashtag">#絶景</p>
-                    <p class="date">2025.05.07</p>
-                </div>
-            </div>
-            <div class="face-overlay"></div>
-        </section>
-        <section class="episode">
-            <div class="split-section__content split-section__content--article split-section__content--article--first">
-                <img src="img/restaurant_article.jpg" class="split-section__img split-section__img--article">
-                <div class="split-section__textbox split-section__textbox--article">
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">　あれは、ギリシャの小さな島を訪れたときのこと。
-                            観光地としてはあまり知られていないその島は、街も静かで、レストランも数えるほど。
-                        </p>
-                    </div>
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            Googleマップにはビーチの名前がいくつか出ていたけれど、どこも少し遠く、どうしようかと迷っていたとき、宿のオーナーである年配のご夫婦が「観光客はあまり行かないけれど、いい場所があるよ」と教えてくれたのです。
-                        </p>
-                    </div>
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            「舗装はされていないから歩きにくいかもしれない。でも、誰もいないし、波の音だけだよ。」
-                            オーナーのその言葉に、私はすぐに惹かれました。</p>
-                    </div>
-                    <!-- <div class="scrolldown">
-                        <div class="block">
-                            <p class="arrow__go arrow__go--article">↓</p>
-                            <div class="totop__container">
-                                <svg class="circleText" viewBox="0 0 100 100">
-                                    <path id="circle--1" class="circleText__circle" d="M 0 50 A 50 50 0 1 1 0 51 z" />
-                                    <text class="circleText__text circleText__text--article">
-                                        <textpath xlink:href="#circle">scroll down scroll down</textpath>
-                                    </text>
-                                </svg>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </section>
-        <section class="episode">
-            <div class="split-section__content split-section__content--article split-section__content--article--second">
-                <div
-                    class="split-section__textbox split-section__textbox--article split-section__textbox--article--left">
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            翌朝、小さなパンを紙袋に入れてもらい、水のボトルを片手に、オーナーが描いてくれた手書きの地図を頼りに歩き出しました。
-                        </p>
-                    </div>
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            観光客向けの道ではなく、地元の人しか知らないような細い坂道。
-                        </p>
-                    </div>
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            すれ違うのは犬を散歩させるおばあさんくらいで、途中、ヤギが何頭も岩の上からこちらを見下ろしていたのを今でも覚えています</p>
-                    </div>
-                </div>
-                <img src="img/restaurant_article.jpg" class="split-section__img split-section__img--article">
-            </div>
-        </section>
-        <section class="episode">
-            <div class="split-section__content split-section__content--article split-section__content--article--third">
-                <img src="img/restaurant_article.jpg" class="split-section__img split-section__img--article">
-                <div class="split-section__textbox split-section__textbox--article">
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            しばらく歩いて、視界がぱっと開けた先に、それはありました。名前も、看板もない小さな入り江。 海は透明すぎて、足元の石の形までくっきり見えました。
-                            砂浜というよりは、小石混じりの静かな岸辺。</p>
-                    </div>
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            だれもいない。音がしない。波のさざめきと、風の音だけ。
-                            私はしばらく、なにも考えずにその場に座りました。 スマホを出して写真を撮る気にもならず、ただ海を見つめていました。
-                        </p>
-                    </div>
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            旅に出る前は、何か特別なことがしたいと思っていたけれど、この「何もない時間」こそが、旅のなかでいちばん贅沢なものなのだと、そのとき初めて気づいたのです。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="episode">
-            <div class="split-section__content split-section__content--article split-section__content--article--end">
-                <div
-                    class="split-section__textbox split-section__textbox--article split-section__textbox--article--left">
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            その後、島に滞在していた間、何度かそのビーチを訪れました。誰かに会ったことは、一度もありません。でも、それがよかった。
-                        </p>
-                    </div>
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            私の中では、あの場所は「島がこっそり見せてくれた秘密」のような感覚で、今でもときどき、ふと目を閉じるとあの静けさがよみがえってきます。
-                        </p>
-                    </div>
-                    <div class="split-section__description ">
-                        <p class="split-section__text split-section__text--article">
-                            旅先で誰かに親切にしてもらったこと。観光地ではない、けれど大切に守られている場所を教えてもらったこと。スマホに残っていないのに、心に強く残っている景色。そんな旅の記憶が、VOYAGEにはある気がします。
-                        </p>
-                    </div>
-                </div>
-                <img src="img/restaurant_article.jpg" class="split-section__img split-section__img--article">
-            </div>
-        </section>
-        <section class="backbtn backbtn--article">
-            <a href="VOYAJournal.html" class="btn__journal btn__journal--back">記事一覧に戻る</a>
-            <img src="img/wave_top_flat_shade_gold.png" alt="" class="wave-top">
-        </section>
         <!-- =============================================== -->
         <!-- INFOMATION -->
         <!-- =============================================== -->
         <section class="info wave-up-padding">
             <header class="section__header">
-                <img src="img/logo.icon.blue.png" alt="アイコン" class="section__icon">
+                <img src="img/logo.icon.blue.svg" alt="アイコン" class="section__icon">
                 <h2 class="section__title">IMFORMATION</h2>
                 <p class="section__subtitle">ご連絡先</p>
             </header>
@@ -247,7 +197,7 @@
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <img src="img/wavefooter.png" alt="" class="wave-top">
+            <img src="img/wavefooter.svg" alt="" class="wave-top">
         </section>
     </main>
 
@@ -255,76 +205,68 @@
     <!-- フッター -->
     <!-- =============================================== -->
     <footer class="footer">
-
-        <div class="footer__wrapper">
-            <div class="footer__inner">
-                <h2 class="footer__catchcopy">あなたの旅は、まだ見ぬ物語。</h2>
-                <div class="footer__container">
-                    <div class="footer__info">
-                        <div class="center">
-                            <img class="footer__info-img" src="img/logo.white.png" alt="VOYAGEロゴ" />
-                            <p>TEL 03-4567-8910</p>
-                            <p>東京都渋谷区神宮前6丁目16-28</p>
-                            <p>グラスシティ渋谷 6F</p>
-                            <p>平日 10:00〜18:00（土日祝休）</p>
-                        </div>
+        <div class="footer__inner">
+            <h2 class="footer__catchcopy">あなたの旅は、まだ見ぬ物語。</h2>
+            <div class="footer__container">
+                <div class="footer__info">
+                    <img class="footer__info-img" src="img/logo.white.svg" alt="VOYAGEロゴ" />
+                    <a href="tel:0312341234" class="phone-link">TEL 03-1234-1234</a>
+                    <p>東京都渋谷区神宮前6丁目16-28</p>
+                    <p>グラスシティ渋谷 6F</p>
+                    <p>平日 10:00〜18:00（土日祝休）</p>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__column">
+                        <a href="about.html">
+                            <h3 class="footer__menuitem">ABOUT</h3>
+                        </a>
+                        <ul>
+                            <li><a href="about.html#concept">CONCEPT <span>コンセプト</span></a></li>
+                            <li><a href="about.html#mission">MISSION <span>想い</span></a></li>
+                            <li><a href="about.html#voice">VOICES <span>お客様の声</span></a></li>
+                        </ul>
                     </div>
-
+                    <div class="footer__column">
+                        <a href="journal.html">
+                            <h3 class="footer__menuitem">JOURNAL</h3>
+                        </a>
+                        <ul>
+                            <li><a href="#pickup">PICK UP<span>ピックアップ</span></a></li>
+                            <li><a href="#new">NEW<span>新着情報</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <a href="service.html">
+                            <h3 class="footer__menuitem">SERVICE</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__link">
                     <div class="footer__sns">
                         <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     </div>
-                    <div class="footer__nav">
-                        <div class="footer__column">
-                            <a href="about.html">
-                                <h3 class="footer__menuitem">ABOUT</h3>
-                            </a>
-                            <ul>
-                                <li><a href="about.html#concept">CONCEPT - コンセプト</a></li>
-                                <li><a href="about.html#mission">MISSION - 想い</a></li>
-                                <li><a href="about.html#voice">VOICES - お客様の声</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__column">
-                            <a href="VOYAJournal.html">
-                                <h3 class="footer__menuitem">VOYA Journal</h3>
-                            </a>
-                            <ul>
-                                <li><a href="#pickup">PICK UP - ピックアップ</a></li>
-                                <li><a href="#new">NEW - 新着情報</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__column">
-                            <a href="service.html">
-                                <h3 class="footer__menuitem">SERVICE</h3>
-                            </a>
-                        </div>
-                        <div class="footer__column">
-                            <a href="contact.html">
-                                <h3 class="footer__menuitem">CONTACT</h3>
-                            </a>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="totop totop--ft">
-                    <a class="block" href="#top">
-                        <p class="arrow__go">↑</p>
-                        <div class="totop__container">
-                            <svg class="circleText" viewBox="0 0 100 100">
-                                <path id="circle" class="circleText__circle" d="M 0 50 A 50 50 0 1 1 0 51 z" />
-                                <text class="circleText__text">
-                                    <textpath xlink:href="#circle">GO BACK TO THE TOP GO BACK TO THE TOP</textpath>
-                                </text>
-                            </svg>
-                        </div>
+                    <a href="contact.html" class="animated-button">
+                        CONTACT
                     </a>
                 </div>
             </div>
-            <p class="copyright">&copy; VOYAGE</p>
+            <div class="totop totop--ft">
+                <a class="block" href="#top">
+                    <p class="arrow__go">↑</p>
+                    <div class="totop__container">
+                        <svg class="circleText" viewBox="0 0 100 100">
+                            <path id="circle" class="circleText__circle" d="M 0 50 A 50 50 0 1 1 0 51 z" />
+                            <text class="circleText__text">
+                                <textpath xlink:href="#circle">GO BACK TO THE TOP GO BACK TO THE TOP</textpath>
+                            </text>
+                        </svg>
+                    </div>
+                </a>
+            </div>
         </div>
+        <p class="copyright">&copy; VOYAGE</p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
