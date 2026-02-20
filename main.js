@@ -245,91 +245,6 @@ if (!reduce) {
         }
     });
 }
-// =================================================
-// isotope
-// =================================================
-// $(function () {
-//     var $grid = $('.grid').isotope({
-//         // .grid クラスを持つ要素に Isotope を初期化。
-//         itemSelector: '.grid-item',
-//         // itemSelector は対象アイテム（ここでは .grid-item クラス）を指定。
-//         layoutMode: 'masonry',
-//         masonry: {
-//             gutter: 60
-//             // gapと同じ値
-//         }
-//     });
-
-//     // store filter for each group
-//     var filters = {};
-//     // フィルター条件を保持するオブジェクト。複数のフィルタグループがある場合、それぞれの状態を記録するため。
-
-//     $('.filters').on('click', '.button', function (event) {
-//         // .filters 内の .button がクリックされた時に処理を行うイベントリスナーを定義。
-//         var $button = $(event.currentTarget);
-//         // get group key クリックされたボタンを jQuery オブジェクトにする。
-
-//         var $buttonGroup = $button.parents('.button-group');
-//         // クリックされたボタンの親要素である .button-group を取得。
-
-//         var filterGroup = $buttonGroup.attr('data-filter-group');
-//         // フィルターグループの名前（ここでは "type"）を取得。
-//         // set filter for group
-
-//         filters[filterGroup] = $button.attr('data-filter');
-//         // 該当グループに選ばれたフィルター値（例: .apple）を記録。
-//         // combine filters
-
-//         var filterValue = concatValues(filters);
-//         // 複数グループのフィルターを1つの文字列に連結（例: .apple.spotify）→ concatValues()関数を使う。
-
-//         // set filter for Isotope
-//         $grid.isotope({ filter: filterValue });
-//         // Isotope にフィルター条件を適用。指定された .apple や .spotify のみ表示されるようになる。
-//     });
-
-//     // change is-checked class on buttons
-//     $('.button-group').each(function (i, buttonGroup) {
-//         // 各 .button-group に対して、ボタンの表示状態（選択済み）を管理する処理を設定。
-
-//         var $buttonGroup = $(buttonGroup);
-//         // 現在の .button-group を jQuery オブジェクトに変換。
-
-//         $buttonGroup.on('click', 'button', function (event) {
-//             // ボタンがクリックされた時に、以下のクラス操作を行う。
-//             $buttonGroup.find('.is-checked').removeClass('is-checked');
-//             // 他の選ばれていたボタンの is-checked クラスを削除。
-//             var $button = $(event.currentTarget);
-//             // クリックされたボタンを取得。
-//             $button.addClass('is-checked');
-//             // クリックされたボタンに is-checked クラスを付与して選択状態を表示。
-//         });
-//     });
-
-//     // flatten object by concatting values
-//     function concatValues(obj) {
-//         // オブジェクト（filters）にある値（フィルター条件）をすべて連結して一つの文字列にまとめる。
-//         var value = '';
-//         for (var prop in obj) {
-//             value += obj[prop];
-//         }
-//         return value;
-//     }
-// });
-
-
-// =================================================
-// jn__new ボタンクリックで色変化 jQuery
-// =================================================
-$(function () {
-    $('.button').on('click', function () {
-        $('.button').removeClass('is-active');
-        $(this).addClass('is-active');
-    });
-});
-
-
-
 
 // =================================================
 // scroll animation GSAP（ScrollTrigger）
@@ -366,7 +281,7 @@ function createAnimation() {
         { x: '-5vw', y: '35vh', rotation: 0 },// 6
         { x: '-20vw', y: '-35vh', rotation: 0 }// 7
     ];
-
+    
     // 以降の tl.to() のデフォルトeasings設定
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
@@ -375,7 +290,7 @@ function createAnimation() {
     const CARD_STAGGER = 0.2;  // 各カードの“出だし”のズレ幅（秒）←大きくすると「順々に」感が強まる
     const CARD_DURATION = 3;  // 1枚のカードが目的地に着くまでの時間（秒）
     const TEXT_START = 1.3;  // テキスト拡大の開始（秒）
-
+    
     // カード散開：出だしを遅らせ、さらに1枚ずつ間隔を空ける
     imageItems.forEach((item, i) => {
         const pos = finalPositions[i];
@@ -386,7 +301,7 @@ function createAnimation() {
     // —— カード群の「終わる時刻」を計算 ——
     const lastCardStart = CARD_START + (imageItems.length - 1) * CARD_STAGGER;
     const cardsEndTime = lastCardStart + CARD_DURATION;
-
+    
     // —— テキスト：TEXT_START から開始して cardsEndTime にピタッと終わる ——
     const TEXT_DURATION = Math.max(0.001, cardsEndTime - TEXT_START);
     tl.to(textBlock, {
@@ -395,11 +310,11 @@ function createAnimation() {
         duration: TEXT_DURATION,
         ease: "none"
     }, TEXT_START);
-
+    
     // 末尾に「見た目は変えない3秒」を追加（スクロールは進むが画は止まる）
     const HOLD_SEC = 3;                 // ← 静止したい“長さ”
     tl.to({}, { duration: HOLD_SEC });
-
+    
     return tl;
 }
 
@@ -412,7 +327,7 @@ function attachScrollTrigger() {
         ScrollTrigger.refresh();
         return;
     }
-
+    
     const animation = createAnimation();
     const SCROLL_RANGE = 500; // %  ← ここを上げ下げするだけで全体の“長さ”を微調整
     ScrollTrigger.create({
@@ -434,93 +349,152 @@ function init() {
 document.addEventListener('DOMContentLoaded', init);
 window.addEventListener('resize', () => { ScrollTrigger.refresh(); });
 
+// =======================================================
+// jn__new  data属性フィルタリング jQuery 
+// =======================================================
+$(function () {
+    let $btn = $('.category-btn [data-filter]');
+    let $list = $('.category-list [data-category]');
+
+    $btn.on('click', function (e) {
+        e.preventDefault();
+        let $btnCat = $(this).attr('data-filter');
+        $list.stop(true, true);
+        $list.removeClass('is-animate');
+
+        if ($btnCat === 'all') {
+            $list.fadeOut().promise().done(function () {
+                $list.addClass('is-animate').fadeIn();
+            });
+        }
+        else {
+            $list.fadeOut().promise().done(function () {
+                $list.filter('[data-category = "' + $btnCat + '"]').addClass('is-animate').fadeIn();
+            });
+        }
+    });
+});
+
+
 // =================================================
+// jn__new ボタンクリックで色変化 jQuery
+// =================================================
+$(function () {
+    $('.button').on('click', function () {
+        $('.button').removeClass('is-active');
+        $(this).addClass('is-active');
+    });
+});
+
+// =====================================================
 // jn__new 「もっと見る」ボタン GSAP（ScrollToPlugin）＋JS
-// =================================================    
+// =====================================================    
 gsap.registerPlugin(ScrollToPlugin);
 
 const button = document.getElementById("toggleButton");
-const articles = document.querySelectorAll(".jn__article");
-// 🌸 初期状態で hidden が付いている要素だけを対象にする
-const initiallyHidden = Array.from(articles).filter(li =>
-    li.classList.contains("hidden")
-);
-const list = document.querySelector(".jn__new"); // ← ★ スクロール先を取得
-let expanded = false;
 
-button.addEventListener("click", () => {
-    expanded = !expanded;
+if (button) {
+    // 初期状態で hidden が付いている要素だけを対象にする
+    const articles = document.querySelectorAll(".jn__article");
+    const initiallyHidden = Array.from(articles).filter(li =>
+        li.classList.contains("hidden")
+    );
 
-    // ボタンを一時的に非表示
-    gsap.to(button, { opacity: 0, duration: 0.3, pointerEvents: "none" });
+    let expanded = false;
+    let openScrollY = 0;
 
-    if (expanded) {
-        // ===== 展開（上から順に表示） =====
-        initiallyHidden.forEach((li, i) => {
-            li.classList.remove("hidden");
-            li.style.display = ""; // ← display:none解除
-            gsap.fromTo(
-                li,
-                { opacity: 0, y: 30 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.4,
-                    delay: i * 0.1,
-                    ease: "power2.out"
-                }
-            );
-        });
+    button.addEventListener("click", () => {
+        expanded = !expanded;
 
-        // テキスト変更後、再表示
-        button.textContent = "閉じる";
-        gsap.to(button, {
-            opacity: 1,
-            delay: initiallyHidden.length * 0.1 + 0.5,
-            duration: 0.4,
-            pointerEvents: "auto"
-        });
+        // ボタンを一時的に非表示
+        gsap.to(button, { opacity: 0, duration: 0.3, pointerEvents: "none" });
 
-    } else {
-        // ===== 折りたたみ（下から順に非表示） =====
-        const visibleInitiallyHidden = initiallyHidden
-            .filter(li => li.style.display !== "none")
-            .reverse(); // 下から順
+        if (expanded) {
+            openScrollY = window.scrollY;
 
-        visibleInitiallyHidden.forEach((li, i) => {
-            gsap.to(li, {
-                opacity: 0,
-                y: -30,
-                duration: 0.4,
-                delay: i * 0.1,
-                ease: "power2.inOut",
-                onComplete: () => {
-                    li.style.display = "none";
-                }
+            // ===== 展開（上から順に表示） =====
+            initiallyHidden.forEach((li, i) => {
+                li.classList.remove("hidden");
+                li.style.display = ""; // ← display:none解除
+                gsap.fromTo(
+                    li,
+                    {
+                        opacity: 0,
+                        y: 30
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.4,
+                        delay: i * 0.1,
+                        ease: "power2.out"
+                    }
+                );
             });
-        });
 
-        const totalDelay = visibleInitiallyHidden.length * 0.1 + 0.4;
+            // テキスト変更後、再表示
+            button.textContent = "閉じる";
+            gsap.to(button, {
+                opacity: 1,
+                delay: initiallyHidden.length * 0.1 + 0.5,
+                duration: 0.4,
+                pointerEvents: "auto"
+            });
+        }
 
-        // テキスト変更を先に
-        button.textContent = "記事をさらに読み込む";
+        else {
+            // ===== 折りたたみ（下から順に非表示） =====
+            const visibleInitiallyHidden = initiallyHidden
+                .filter(li => !li.classList.contains("hidden") && li.style.display !== "none")
+                .reverse(); // 下から順
 
-        // 📍リストの先頭までスムーズに戻る
-        gsap.delayedCall(totalDelay - 0.2, () => {
-            const listTop = list.getBoundingClientRect().top + window.scrollY + 180; // ← ★ ulまで戻る
+            // 📍リストの先頭までスムーズに戻る
+
             gsap.to(window, {
-                scrollTo: { y: listTop, autoKill: false },
+                scrollTo: { y: openScrollY, autoKill: false },
                 duration: 1.2,
+                // delay: visibleInitiallyHidden.length * 0.1,
                 ease: "power2.inOut"
             });
-        });
 
-        // ボタン再表示
-        gsap.to(button, {
-            opacity: 1,
-            delay: totalDelay + 0.5,
-            duration: 0.4,
-            pointerEvents: "auto"
+            visibleInitiallyHidden.forEach((li, i) => {
+                gsap.to(li, {
+                    opacity: 0,
+                    y: -30,
+                    duration: 0.4,
+                    delay: i * 0.1,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        li.style.display = "none";
+                        li.classList.add("hidden"); // ← 追加
+                    }
+                });
+            });
+
+            const totalDelay = visibleInitiallyHidden.length * 0.1 + 0.5;
+
+            // テキスト変更を先に
+            button.textContent = "記事をさらに読み込む";
+
+            // ボタン再表示
+            gsap.to(button, {
+                opacity: 1,
+                delay: totalDelay,
+                duration: 0.4,
+                pointerEvents: "auto"
+            });
+        }
+    });
+}
+
+// =================================================
+// article ヘッダーの線アニメーション
+// =================================================
+window.addEventListener('load', () => {
+    if (location.pathname.includes('article.html')) {
+        // console.log('article.htmlのヘッダー線アニメーション');
+        document.querySelectorAll('.face__wrapper-top').forEach(el => {
+            el.classList.add('is-animated');
         });
     }
 });

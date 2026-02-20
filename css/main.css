@@ -2066,6 +2066,7 @@ img {
   margin-bottom: 10rem;
 }
 .jn__new .category__sort .button {
+  cursor: pointer;
   color: #FFFFFF;
   background-color: #354976;
   font-size: 2rem;
@@ -2085,6 +2086,18 @@ img {
   color: #FFFFFF;
 }
 
+.is-animate {
+  animation: 0.6s zoom-in;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: none;
+  }
+}
 .hidden {
   display: none;
 }
@@ -2315,7 +2328,8 @@ img {
   top: -10%;
   background: #FFFFFF;
   width: 2px;
-  height: 130%;
+  height: 0;
+  transition: 0.5s all ease;
 }
 .face__wrapper-bottom {
   display: flex;
@@ -2340,6 +2354,10 @@ img {
   font-style: normal;
   letter-spacing: 0.2rem;
   margin-bottom: 7.4rem;
+}
+
+.face__wrapper-top.is-animated::before {
+  height: 130%;
 }
 
 .episode {

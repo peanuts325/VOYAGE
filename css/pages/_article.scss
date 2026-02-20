@@ -75,15 +75,16 @@
                 top: -10%;
                 background: $textcolor-sub;
                 width: 2px;
-                height: 130%;
+                height: 0;
+                transition:0.5s all ease;
             }
         }
-
+        
         &-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
+            
             .hashtag {
                 font-size: 2.4rem;
                 font-weight: 500;
@@ -92,13 +93,13 @@
                 padding: 10px 20px;
                 letter-spacing: 10px;
             }
-
+            
             .date {
                 font-size: 3.6rem;
             }
         }
     }
-
+    
     &__title {
         font-size: 6rem;
         @include heading-bold;
@@ -106,6 +107,9 @@
     }
 }
 
+.face__wrapper-top.is-animated::before {
+    height: 130%;
+}
 
 .episode {
     // position: relative;

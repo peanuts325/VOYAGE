@@ -96,6 +96,7 @@
         margin-bottom: 10rem;
 
         .button {
+            cursor: pointer;
             color: $textcolor-sub;
             background-color: $textcolor-journal-sub;
             font-size: 2rem;
@@ -120,7 +121,18 @@
 
 }
 
+.is-animate {
+   animation: .6s zoom-in;
+}
 
+@keyframes zoom-in {
+   0% {
+    transform: scale(.8);
+   }
+   100% {
+     transform: none;
+   }
+}
 .hidden {
     display: none;
 }
