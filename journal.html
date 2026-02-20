@@ -27,12 +27,12 @@
     <header class="header" id="header">
         <div class="overlay"></div>
         <!-- ===============ロゴ ===============-->
-        <h1>
+        <h1 class="pointer-events">
             <a href="index.html">
                 <img src="img/logo.white.svg" alt="VOYAGEロゴ" />
             </a>
         </h1>
-        <nav class="nav">
+        <nav class="nav pointer-events">
             <!-- ===============ナビゲーション=============== -->
             <ul class="nav__list">
                 <li class="nav__item"><a href="about.html" class="nav__link hover_line ">ABOUT</a></li>
@@ -190,11 +190,11 @@
             </header>
 
             <ul class="category__sort category-btn">
-                <li class="button"  data-filter="all">すべて</li>
-                <li class="button"  data-filter="spots">＃絶景</li>
-                <li class="button"  data-filter="cuisine">＃グルメ</li>
-                <li class="button"  data-filter="activities">＃アクティビティ</li>
-                <li class="button"  data-filter="culture">＃島の暮らし</li>
+                <li class="button" data-filter="all">すべて</li>
+                <li class="button" data-filter="spots">＃絶景</li>
+                <li class="button" data-filter="cuisine">＃グルメ</li>
+                <li class="button" data-filter="activities">＃アクティビティ</li>
+                <li class="button" data-filter="culture">＃島の暮らし</li>
             </ul>
 
             <ul class="jn__list category-list">
@@ -218,7 +218,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="jn__article"  data-category="cuisine">
+                <li class="jn__article" data-category="cuisine">
                     <a href="#" class="jn__article-link">
                         <figure class="jn__article-figure">
                             <img class="jn__article-img" src="img/coconut.webp" alt="#">
@@ -238,7 +238,7 @@
                             海を眺めながらとろけるような塩キャラメルパンケーキ</p>
                     </a>
                 </li>
-                <li class="jn__article"  data-category="spots">
+                <li class="jn__article" data-category="spots">
                     <a href="article.html" class="jn__article-link">
                         <figure class="jn__article-figure">
                             <img class="jn__article-img" src="img/beach-article.webp" alt="#">
@@ -259,7 +259,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="jn__article"  data-category="activities">
+                <li class="jn__article" data-category="activities">
                     <a href="#" class="jn__article-link">
                         <figure class="jn__article-figure">
                             <img class="jn__article-img" src="img/coconut.webp" alt="#">
@@ -278,7 +278,7 @@
                         <p class="jn__article-text">透明度抜群の海をSUPで滑るように進み、念願の無人島に上陸し、大自然の中で最高の解放感を味わいました。</p>
                     </a>
                 </li>
-                <li class="jn__article"  data-category="cuisine">
+                <li class="jn__article" data-category="cuisine">
                     <a href="#" class="jn__article-link">
                         <figure class="jn__article-figure">
                             <img class="jn__article-img" src="img/coconut.webp" alt="#">
@@ -298,7 +298,45 @@
                             海を眺めながらとろけるような塩キャラメルパンケーキ</p>
                     </a>
                 </li>
-                <li class="jn__article"  data-category="activities">
+                <li class="jn__article" data-category="culture">
+                    <a href="#" class="jn__article-link">
+                        <figure class="jn__article-figure">
+                            <img class="jn__article-img" src="img/artivle_sunset.webp" alt="#">
+                        </figure>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <div class="jn__article-upper">
+                            <p class="jn__article-date">2025.05.07</p>
+                            <p class="jn__article-cat">＃島の暮らし</p>
+                        </div>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <h5 class="jn__article-title">“こんにちは”で始まる島の1日〜1人旅でも安心な集落暮らし〜</h5>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <p class="jn__article-text">「こんにちは」の一言から始まる温かい交流を通じて、一人旅でも安心して溶け込める島の集落暮らしを満喫しました。</p>
+                    </a>
+                </li>
+                <li class="jn__article" data-category="culture">
+                    <a href="#" class="jn__article-link">
+                        <figure class="jn__article-figure">
+                            <img class="jn__article-img" src="img/artivle_sunset.webp" alt="#">
+                        </figure>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <div class="jn__article-upper">
+                            <p class="jn__article-date">2025.05.07</p>
+                            <p class="jn__article-cat">＃島の暮らし</p>
+                        </div>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <h5 class="jn__article-title">“こんにちは”で始まる島の1日〜1人旅でも安心な集落暮らし〜</h5>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <p class="jn__article-text">「こんにちは」の一言から始まる温かい交流を通じて、一人旅でも安心して溶け込める島の集落暮らしを満喫しました。</p>
+                    </a>
+                </li>
+                <li class="jn__article" data-category="activities">
                     <a href="#" class="jn__article-link">
                         <figure class="jn__article-figure">
                             <img class="jn__article-img" src="img/coconut.webp" alt="#">
@@ -315,6 +353,82 @@
                     </a>
                     <a href="#" class="jn__article-link">
                         <p class="jn__article-text">透明度抜群の海をSUPで滑るように進み、念願の無人島に上陸し、大自然の中で最高の解放感を味わいました。</p>
+                    </a>
+                </li>
+                <li class="jn__article" data-category="spots">
+                    <a href="#" class="jn__article-link">
+                        <figure class="jn__article-figure">
+                            <img class="jn__article-img" src="img/artivle_sunset.webp" alt="#">
+                        </figure>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <div class="jn__article-upper">
+                            <p class="jn__article-date">2025.05.07</p>
+                            <p class="jn__article-cat">＃絶景</p>
+                        </div>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <h5 class="jn__article-title">“こんにちは”で始まる島の1日〜1人旅でも安心な集落暮らし〜</h5>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <p class="jn__article-text">「こんにちは」の一言から始まる温かい交流を通じて、一人旅でも安心して溶け込める島の集落暮らしを満喫しました。</p>
+                    </a>
+                </li>
+                <li class="jn__article" data-category="culture">
+                    <a href="#" class="jn__article-link">
+                        <figure class="jn__article-figure">
+                            <img class="jn__article-img" src="img/artivle_sunset.webp" alt="#">
+                        </figure>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <div class="jn__article-upper">
+                            <p class="jn__article-date">2025.05.07</p>
+                            <p class="jn__article-cat">＃島の暮らし</p>
+                        </div>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <h5 class="jn__article-title">“こんにちは”で始まる島の1日〜1人旅でも安心な集落暮らし〜</h5>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <p class="jn__article-text">「こんにちは」の一言から始まる温かい交流を通じて、一人旅でも安心して溶け込める島の集落暮らしを満喫しました。</p>
+                    </a>
+                </li>
+                <li class="jn__article" data-category="cuisine">
+                    <a href="#" class="jn__article-link">
+                        <figure class="jn__article-figure">
+                            <img class="jn__article-img" src="img/artivle_sunset.webp" alt="#">
+                        </figure>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <div class="jn__article-upper">
+                            <p class="jn__article-date">2025.05.07</p>
+                            <p class="jn__article-cat">＃グルメ</p>
+                        </div>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <h5 class="jn__article-title">“こんにちは”で始まる島の1日〜1人旅でも安心な集落暮らし〜</h5>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <p class="jn__article-text">「こんにちは」の一言から始まる温かい交流を通じて、一人旅でも安心して溶け込める島の集落暮らしを満喫しました。</p>
+                    </a>
+                </li>
+                <li class="jn__article" data-category="activities">
+                    <a href="#" class="jn__article-link">
+                        <figure class="jn__article-figure">
+                            <img class="jn__article-img" src="img/artivle_sunset.webp" alt="#">
+                        </figure>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <div class="jn__article-upper">
+                            <p class="jn__article-date">2025.05.07</p>
+                            <p class="jn__article-cat">＃アクティビティ</p>
+                        </div>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <h5 class="jn__article-title">“こんにちは”で始まる島の1日〜1人旅でも安心な集落暮らし〜</h5>
+                    </a>
+                    <a href="#" class="jn__article-link">
+                        <p class="jn__article-text">「こんにちは」の一言から始まる温かい交流を通じて、一人旅でも安心して溶け込める島の集落暮らしを満喫しました。</p>
                     </a>
                 </li>
                 <li class="jn__article hidden" data-category="culture">
@@ -336,7 +450,7 @@
                         <p class="jn__article-text">「こんにちは」の一言から始まる温かい交流を通じて、一人旅でも安心して溶け込める島の集落暮らしを満喫しました。</p>
                     </a>
                 </li>
-                <li class="jn__article hidden" data-category="culture">
+                <li class="jn__article hidden" data-category="cuisine">
                     <a href="#" class="jn__article-link">
                         <figure class="jn__article-figure">
                             <img class="jn__article-img" src="img/artivle_sunset.webp" alt="#">
@@ -345,7 +459,7 @@
                     <a href="#" class="jn__article-link">
                         <div class="jn__article-upper">
                             <p class="jn__article-date">2025.05.07</p>
-                            <p class="jn__article-cat">＃島の暮らし</p>
+                            <p class="jn__article-cat">＃グルメ</p>
                         </div>
                     </a>
                     <a href="#" class="jn__article-link">

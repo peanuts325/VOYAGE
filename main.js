@@ -281,7 +281,7 @@ function createAnimation() {
         { x: '-5vw', y: '35vh', rotation: 0 },// 6
         { x: '-20vw', y: '-35vh', rotation: 0 }// 7
     ];
-    
+
     // 以降の tl.to() のデフォルトeasings設定
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
@@ -290,7 +290,7 @@ function createAnimation() {
     const CARD_STAGGER = 0.2;  // 各カードの“出だし”のズレ幅（秒）←大きくすると「順々に」感が強まる
     const CARD_DURATION = 3;  // 1枚のカードが目的地に着くまでの時間（秒）
     const TEXT_START = 1.3;  // テキスト拡大の開始（秒）
-    
+
     // カード散開：出だしを遅らせ、さらに1枚ずつ間隔を空ける
     imageItems.forEach((item, i) => {
         const pos = finalPositions[i];
@@ -301,7 +301,7 @@ function createAnimation() {
     // —— カード群の「終わる時刻」を計算 ——
     const lastCardStart = CARD_START + (imageItems.length - 1) * CARD_STAGGER;
     const cardsEndTime = lastCardStart + CARD_DURATION;
-    
+
     // —— テキスト：TEXT_START から開始して cardsEndTime にピタッと終わる ——
     const TEXT_DURATION = Math.max(0.001, cardsEndTime - TEXT_START);
     tl.to(textBlock, {
@@ -310,11 +310,11 @@ function createAnimation() {
         duration: TEXT_DURATION,
         ease: "none"
     }, TEXT_START);
-    
+
     // 末尾に「見た目は変えない3秒」を追加（スクロールは進むが画は止まる）
     const HOLD_SEC = 3;                 // ← 静止したい“長さ”
     tl.to({}, { duration: HOLD_SEC });
-    
+
     return tl;
 }
 
@@ -327,7 +327,7 @@ function attachScrollTrigger() {
         ScrollTrigger.refresh();
         return;
     }
-    
+
     const animation = createAnimation();
     const SCROLL_RANGE = 500; // %  ← ここを上げ下げするだけで全体の“長さ”を微調整
     ScrollTrigger.create({
@@ -352,39 +352,36 @@ window.addEventListener('resize', () => { ScrollTrigger.refresh(); });
 // =======================================================
 // jn__new  data属性フィルタリング jQuery 
 // =======================================================
+let currentFilter = 'all';
+// フィルターの現在値 (フィルタリングともっと見るボタン共有)
+
+
 $(function () {
     let $btn = $('.category-btn [data-filter]');
     let $list = $('.category-list [data-category]');
 
     $btn.on('click', function (e) {
         e.preventDefault();
-        let $btnCat = $(this).attr('data-filter');
-        $list.stop(true, true);
-        $list.removeClass('is-animate');
+        currentFilter = $(this).attr('data-filter'); // ← 状態を更新
+        $list.stop(true, true).removeClass('is-animate');
 
-        if ($btnCat === 'all') {
+        if (currentFilter === 'all') {
             $list.fadeOut().promise().done(function () {
-                $list.addClass('is-animate').fadeIn();
+                $list.not('.hidden').addClass('is-animate').fadeIn();
             });
         }
         else {
             $list.fadeOut().promise().done(function () {
-                $list.filter('[data-category = "' + $btnCat + '"]').addClass('is-animate').fadeIn();
+                $list.filter('[data-category="' + currentFilter + '"]')
+                    .not('.hidden')
+                    .addClass('is-animate')
+                    .fadeIn();
             });
         }
     });
 });
 
 
-// =================================================
-// jn__new ボタンクリックで色変化 jQuery
-// =================================================
-$(function () {
-    $('.button').on('click', function () {
-        $('.button').removeClass('is-active');
-        $(this).addClass('is-active');
-    });
-});
 
 // =====================================================
 // jn__new 「もっと見る」ボタン GSAP（ScrollToPlugin）＋JS
@@ -401,9 +398,12 @@ if (button) {
     );
 
     let expanded = false;
+    let isAnimating = false;
     let openScrollY = 0;
 
     button.addEventListener("click", () => {
+        if (isAnimating) return;
+        isAnimating = true;
         expanded = !expanded;
 
         // ボタンを一時的に非表示
@@ -412,8 +412,14 @@ if (button) {
         if (expanded) {
             openScrollY = window.scrollY;
 
+            // ✅ currentFilter に合致するものだけ表示
+            const toShow = initiallyHidden.filter(li =>
+                currentFilter === 'all' ||
+                li.getAttribute('data-category') === currentFilter
+            );
+
             // ===== 展開（上から順に表示） =====
-            initiallyHidden.forEach((li, i) => {
+            toShow.forEach((li, i) => {
                 li.classList.remove("hidden");
                 li.style.display = ""; // ← display:none解除
                 gsap.fromTo(
@@ -438,26 +444,25 @@ if (button) {
                 opacity: 1,
                 delay: initiallyHidden.length * 0.1 + 0.5,
                 duration: 0.4,
-                pointerEvents: "auto"
+                pointerEvents: "auto",
+                onComplete: () => { isAnimating = false; }
             });
         }
 
         else {
             // ===== 折りたたみ（下から順に非表示） =====
-            const visibleInitiallyHidden = initiallyHidden
+            const toHide = initiallyHidden
                 .filter(li => !li.classList.contains("hidden") && li.style.display !== "none")
                 .reverse(); // 下から順
 
             // 📍リストの先頭までスムーズに戻る
-
             gsap.to(window, {
                 scrollTo: { y: openScrollY, autoKill: false },
                 duration: 1.2,
-                // delay: visibleInitiallyHidden.length * 0.1,
                 ease: "power2.inOut"
             });
 
-            visibleInitiallyHidden.forEach((li, i) => {
+            toHide.forEach((li, i) => {
                 gsap.to(li, {
                     opacity: 0,
                     y: -30,
@@ -471,22 +476,31 @@ if (button) {
                 });
             });
 
-            const totalDelay = visibleInitiallyHidden.length * 0.1 + 0.5;
+            const totalDelay = toHide.length * 0.1 + 0.5;
 
             // テキスト変更を先に
             button.textContent = "記事をさらに読み込む";
-
             // ボタン再表示
             gsap.to(button, {
                 opacity: 1,
                 delay: totalDelay,
                 duration: 0.4,
-                pointerEvents: "auto"
+                pointerEvents: "auto",
+                onComplete: () => { isAnimating = false; }
             });
         }
     });
 }
 
+// =================================================
+// jn__new ボタンクリックで色変化 jQuery
+// =================================================
+$(function () {
+    $('.button').on('click', function () {
+        $('.button').removeClass('is-active');
+        $(this).addClass('is-active');
+    });
+});
 // =================================================
 // article ヘッダーの線アニメーション
 // =================================================

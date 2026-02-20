@@ -344,6 +344,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  pointer-events: none;
 }
 .header img {
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 2px rgba(0, 0, 0, 0.35));
@@ -356,6 +357,10 @@ img {
     width: 10rem;
     height: 10rem;
   }
+}
+
+.pointer-events {
+  pointer-events: auto;
 }
 
 .nav__list {
