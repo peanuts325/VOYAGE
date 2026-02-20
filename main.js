@@ -1,7 +1,7 @@
+/*=================================================
+ハンバーガーメニュー
+===================================================*/
 $(function () {
-    /*=================================================
-    ハンバーガーメニュー
-    ===================================================*/
     // ハンバーガーメニューのクリックイベント
     //下記も同様の意味となります。
     $(".hamburger").on("click", function () {
@@ -18,7 +18,44 @@ $(function () {
         $('header').removeClass('open');
     });
 });
+// =================================================
+// ローディングアニメーション GSAP
+// =================================================
+const loader = document.querySelector(".loader");
 
+// ローダーが無いページは何もしない
+if (!loader) {
+    document.body.style.overflow = "";
+} else {
+    const MIN_TIME = 3000;
+
+    let loaded = false;
+    let minTimePassed = false;
+    document.body.style.overflow = "hidden";
+
+    const tryHide = () => {
+        if (loaded && minTimePassed) {
+            gsap.to(".loader", {
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                onComplete: () => {
+                    document.querySelector(".loader").style.display = "none";
+                    document.body.style.overflow = "";
+                }
+            });
+        }
+    };
+    window.addEventListener("load", () => {
+        loaded = true;
+        tryHide();
+    });
+
+    setTimeout(() => {
+        minTimePassed = true;
+        tryHide();
+    }, MIN_TIME);
+}
 /*=================================================
 PICK UP スワイパー  GSAP
 ===================================================*/
