@@ -1585,6 +1585,7 @@ img {
   transition: box-shadow 0.15s ease, transform 0.15s ease;
   background-color: #FFFFFF;
   border-radius: 12px;
+  border: 1px solid white;
 }
 .pickup .pickup-link:hover {
   box-shadow: none !important;
@@ -1634,11 +1635,11 @@ img {
 }
 
 .card:nth-child(1) .pickup-link {
-  box-shadow: 1rem 1rem 0rem rgb(194, 144, 145);
+  box-shadow: 1rem 1rem 0rem rgb(102, 164, 189);
 }
 
 .card:nth-child(2) .pickup-link {
-  box-shadow: 1rem 1rem 0rem rgba(101, 172, 228, 0.58);
+  box-shadow: 1rem 1rem 0rem rgba(112, 169, 212, 0.58);
 }
 
 .card:nth-child(3) .pickup-link {
@@ -1646,27 +1647,27 @@ img {
 }
 
 .card:nth-child(4) .pickup-link {
-  box-shadow: 1rem 1rem 0rem rgba(93, 124, 226, 0.58);
+  box-shadow: 1rem 1rem 0rem rgba(218, 107, 107, 0.58);
 }
 
 .card:nth-child(5) .pickup-link {
-  box-shadow: 1rem 1rem 0rem rgba(221, 200, 130, 0.58);
+  box-shadow: 1rem 1rem 0rem rgba(67, 129, 158, 0.58);
 }
 
 .card:nth-child(6) .pickup-link {
-  box-shadow: 1rem 1rem 0rem rgba(118, 156, 238, 0.45);
+  box-shadow: 1rem 1rem 0rem rgba(54, 98, 194, 0.45);
 }
 
 .card:nth-child(7) .pickup-link {
-  box-shadow: 1rem 1rem 0rem rgba(146, 242, 117, 0.58);
+  box-shadow: 1rem 1rem 0rem rgba(84, 173, 103, 0.58);
 }
 
 .card:nth-child(8) .pickup-link {
-  box-shadow: 1rem 1rem 0rem rgba(117, 234, 242, 0.58);
+  box-shadow: 1rem 1rem 0rem rgba(242, 117, 169, 0.58);
 }
 
 .card:nth-child(9) .pickup-link {
-  box-shadow: 1rem 1rem 0rem rgba(240, 227, 113, 0.58);
+  box-shadow: 1rem 1rem 0rem rgba(113, 236, 240, 0.58);
 }
 
 @media (max-width: 1056px) {
