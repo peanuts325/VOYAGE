@@ -32,20 +32,20 @@ if (!loader) {
     let loaded = false;
     let minTimePassed = false;
     document.body.style.overflow = "hidden";
-
     const tryHide = () => {
         if (loaded && minTimePassed) {
-            gsap.to(".loader", {
+            gsap.to(loader, {
                 opacity: 0,
                 duration: 0.8,
                 ease: "power2.out",
                 onComplete: () => {
-                    document.querySelector(".loader").style.display = "none";
-                    document.body.style.overflow = "";
+                    loader.style.display = "none";
+                    document.body.style.overflow = ""; // ← これだけで十分
                 }
             });
         }
     };
+
     window.addEventListener("load", () => {
         loaded = true;
         tryHide();
