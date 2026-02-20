@@ -42,10 +42,10 @@
             border-radius: 16px;
         }
 
-        &__icon {
+        i{
+            display: inline-block;
             padding: 2%;
-            width: 6rem;
-            height: 6rem;
+           font-size: 4.2rem;
             object-fit: cover;
             margin-bottom: 10px;
             margin-inline: auto;

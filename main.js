@@ -26,35 +26,46 @@ const loader = document.querySelector(".loader");
 // ローダーが無いページは何もしない
 if (!loader) {
     document.body.style.overflow = "";
-} else {
-    const MIN_TIME = 3000;
+}
+else {
+    // 既にローディング済みならスキップ
+    if (sessionStorage.getItem("loaderShown")) {
+        loader.style.display = "none";
+        document.body.style.overflow = "";
+    }
 
-    let loaded = false;
-    let minTimePassed = false;
-    document.body.style.overflow = "hidden";
-    const tryHide = () => {
-        if (loaded && minTimePassed) {
-            gsap.to(loader, {
-                opacity: 0,
-                duration: 0.8,
-                ease: "power2.out",
-                onComplete: () => {
-                    loader.style.display = "none";
-                    document.body.style.overflow = ""; // ← これだけで十分
-                }
-            });
-        }
-    };
+    else {
+        const MIN_TIME = 3000;
 
-    window.addEventListener("load", () => {
-        loaded = true;
-        tryHide();
-    });
+        let loaded = false;
+        let minTimePassed = false;
+        document.body.style.overflow = "hidden";
+        const tryHide = () => {
+            if (loaded && minTimePassed) {
+                gsap.to(loader, {
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        loader.style.display = "none";
+                        document.body.style.overflow = "";
+                        sessionStorage.setItem("loaderShown", "true");
+                        // 完了後に記録
+                    }
+                });
+            }
+        };
 
-    setTimeout(() => {
-        minTimePassed = true;
-        tryHide();
-    }, MIN_TIME);
+        window.addEventListener("load", () => {
+            loaded = true;
+            tryHide();
+        });
+
+        setTimeout(() => {
+            minTimePassed = true;
+            tryHide();
+        }, MIN_TIME);
+    }
 }
 /*=================================================
 PICK UP スワイパー  GSAP
@@ -199,11 +210,6 @@ $(function () {
         cards.forEach((el) => gsap.set(el, { x: slotOf(el) * SLOT_PX + base }));
     });
 });
-
-
-
-
-
 
 /*=================================================
 FIND/voice スライダー jQuery（＋Slick）
@@ -387,38 +393,61 @@ document.addEventListener('DOMContentLoaded', init);
 window.addEventListener('resize', () => { ScrollTrigger.refresh(); });
 
 // =======================================================
-// jn__new  data属性フィルタリング jQuery 
+// jn__new  共通設定
 // =======================================================
 let currentFilter = 'all';
 // フィルターの現在値 (フィルタリングともっと見るボタン共有)
 
+const articles = document.querySelectorAll(".jn__article");
+const initiallyHidden = Array.from(articles).filter(li =>
+    li.classList.contains("hidden")
+);
 
+let expanded = false;
+let isAnimating = false;
+
+// =======================================================
+// jn__new  data属性フィルタリング jQuery 
+// =======================================================
 $(function () {
-    let $btn = $('.category-btn [data-filter]');
-    let $list = $('.category-list [data-category]');
+    const $btn = $('.category-btn [data-filter]');
+    const $list = $('.category-list [data-category]');
+    const $toggleButton = $('#toggleButton');
+    const $backbtn = $('.backbtn');
 
     $btn.on('click', function (e) {
         e.preventDefault();
         currentFilter = $(this).attr('data-filter'); // ← 状態を更新
         $list.stop(true, true).removeClass('is-animate');
 
+        // ===== もっと見るボタンのリセット =====
+        expanded = false;
+        isAnimating = false;
+        initiallyHidden.forEach(li => {
+            li.style.display = 'none';
+            li.classList.add('hidden');
+        });
+        gsap.set($toggleButton[0], { opacity: 1, pointerEvents: 'auto' });
+        $toggleButton.text('記事をさらに読み込む');
+
         if (currentFilter === 'all') {
+            $backbtn.show();
             $list.fadeOut().promise().done(function () {
                 $list.not('.hidden').addClass('is-animate').fadeIn();
             });
         }
         else {
+            $backbtn.hide();
             $list.fadeOut().promise().done(function () {
                 $list.filter('[data-category="' + currentFilter + '"]')
-                    .not('.hidden')
+                    .removeClass('hidden')
+                    .css('display', '')
                     .addClass('is-animate')
                     .fadeIn();
             });
         }
     });
 });
-
-
 
 // =====================================================
 // jn__new 「もっと見る」ボタン GSAP（ScrollToPlugin）＋JS
@@ -428,14 +457,6 @@ gsap.registerPlugin(ScrollToPlugin);
 const button = document.getElementById("toggleButton");
 
 if (button) {
-    // 初期状態で hidden が付いている要素だけを対象にする
-    const articles = document.querySelectorAll(".jn__article");
-    const initiallyHidden = Array.from(articles).filter(li =>
-        li.classList.contains("hidden")
-    );
-
-    let expanded = false;
-    let isAnimating = false;
     let openScrollY = 0;
 
     button.addEventListener("click", () => {
@@ -449,7 +470,7 @@ if (button) {
         if (expanded) {
             openScrollY = window.scrollY;
 
-            // ✅ currentFilter に合致するものだけ表示
+            // currentFilter に合致するものだけ表示
             const toShow = initiallyHidden.filter(li =>
                 currentFilter === 'all' ||
                 li.getAttribute('data-category') === currentFilter
@@ -492,7 +513,7 @@ if (button) {
                 .filter(li => !li.classList.contains("hidden") && li.style.display !== "none")
                 .reverse(); // 下から順
 
-            // 📍リストの先頭までスムーズに戻る
+            // リストの先頭までスムーズに戻る
             gsap.to(window, {
                 scrollTo: { y: openScrollY, autoKill: false },
                 duration: 1.2,
@@ -508,7 +529,7 @@ if (button) {
                     ease: "power2.inOut",
                     onComplete: () => {
                         li.style.display = "none";
-                        li.classList.add("hidden"); // ← 追加
+                        li.classList.add("hidden");
                     }
                 });
             });
