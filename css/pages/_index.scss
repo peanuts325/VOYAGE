@@ -417,8 +417,7 @@ border: 1px solid white;
 .bg-wrapper {
     position: fixed;
     inset: 0;
-    background: linear-gradient(rgba(69, 94, 101, 0.4), rgba(69, 94, 101, 0.4)), url('../../img/krabi.webp');
-    // background: linear-gradient(rgba(69, 94, 101, 0.4), rgba(69, 94, 101, 0.4)), url('../../img/scroll(3).webp');
+    background: linear-gradient(rgba(69, 94, 101, 0.4), rgba(69, 94, 101, 0.4)), url('../img/krabi.webp');
     background-size: cover;
     background-position: center 0%;
     background-color: $backgroundbler;
