@@ -994,10 +994,13 @@ img {
   border: 3px solid #FFFFFF;
   margin: 160px auto;
   max-width: 1200px;
-  border-radius: 2.8rem iframe;
-  border-radius-border-radius: 2.8rem;
-  border-radius-width: 100%;
-  border-radius-object-fit: cover;
+  border-radius: 2.8rem;
+}
+.info__map iframe {
+  border-radius: 2.8rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .info .wave {
   width: 100%;
