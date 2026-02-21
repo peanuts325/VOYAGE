@@ -59,7 +59,8 @@
         transition: box-shadow .15s ease, transform .15s ease;
         background-color: $backgroundcolor;
         border-radius: 12px;
-border: 1px solid white;
+        border: 1px solid white;
+
         &:hover {
             box-shadow: none !important;
             transform: translate(1rem, 1rem);
@@ -75,7 +76,7 @@ border: 1px solid white;
 
 
 /* スライダー全体は横幅いっぱい */
-.swiper {
+.pickup__wrapper {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -85,7 +86,7 @@ border: 1px solid white;
 }
 
 /* カードを入れるレーン */
-.swiper-card {
+.pickup__cards {
     position: relative;
     /* 子カードを絶対配置するため */
 }
@@ -163,7 +164,7 @@ border: 1px solid white;
 
 /* 768px以下：タイトルは“通常フロー”で上段に置く（＝重ねない） */
 @media (max-width: 768px) {
-    .swiper.is-mobile .slot-overlay.title {
+    .pickup__wrapper.is-mobile .slot-overlay.title {
         position: static;
         pointer-events: auto;
         width: auto;
@@ -249,20 +250,13 @@ border: 1px solid white;
 .find {
     background-color: $maincolor;
 
-    &__wrapper {
-        // max-width: 90vw;
-        margin-inline: auto;
-
-    }
-
-
     &__content {
         padding-block: 8rem;
-        transition: transform 0.5s ease;
     }
 
     &__card {
-        margin-right: 3.2rem;
+        margin-inline: 1.6rem;
+        // margin-right: 3.2rem;
         padding-block: 3.2rem;
         position: relative;
         border-radius: 1.6rem;
@@ -270,50 +264,29 @@ border: 1px solid white;
         width: 33.1rem;
         aspect-ratio: 2/ 3;
         /* アスペクト比を維持 */
-        background-size: cover;
-        background-position: center;
+        overflow: hidden;
+
+        &-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         &-overlay {
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            inset: 0;
             background: rgba(30, 58, 64, 0.2); // ← 半透明の幕
             z-index: 1;
-            border-radius: 1.6rem;
         }
 
-        &--santorini {
-            background-image: url('../img/santorini.webp');
-        }
-
-        &--borabora {
-            background-image: url('../img/find_borabora.webp');
-        }
-
-        &--krabi {
-            background-image: url('../img/krabi.webp');
-        }
-
-        &--watervilla {
-            background-image: url('../img/watervilla.webp');
-        }
-
-        &--beach {
-            background-image: url('../img/find-beach.webp');
-        }
-
-        &--ocean {
-            background-image: url('../img/find-ocean.webp');
-        }
-
-        &--boat {
-            background-image: url('../img/find-boat.webp');
-        }
 
         &-text {
-            position: relative;
+            width: 100%;
+            position: absolute;
+            // inset: 0;
+            top: 4rem;
             color: $textcolor-sub;
             z-index: 1;
             display: flex;

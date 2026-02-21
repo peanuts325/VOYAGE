@@ -16,7 +16,7 @@
         background-color: $maincolor-journal;
     }
 
-   
+
     &__box {
         margin-inline: auto;
         justify-content: center;
@@ -26,7 +26,7 @@
         margin-bottom: 8rem;
         padding: 4rem;
         border: 1px solid $textcolor-main;
-        @include rounded(1rem);
+        border-radius: 1rem;
         max-width: 100rem;
     }
 
@@ -39,7 +39,7 @@
     &__label {
         font-size: 1.5rem;
         padding: 0.4rem 1rem;
-        @include rounded(2rem);
+        border-radius: 2rem;
         @include heading-bold;
         letter-spacing: 0.05rem;
         background-color: $componentcolor-info;
@@ -63,10 +63,9 @@
         border: 3px solid $textcolor-sub;
         margin: 160px auto;
         max-width: 1200px;
-        @include rounded(2.8rem);
 
-        iframe {
-            @include rounded(2.8rem);
+        border-radius:2.8rem iframe {
+            border-radius: 2.8rem;
             width: 100%;
             object-fit: cover;
         }

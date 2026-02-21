@@ -39,6 +39,7 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
+
     @include tab {
       flex-direction: column;
       align-items: center;
@@ -48,6 +49,7 @@
 
   &__info {
     text-align: center;
+
     &-img {
       width: 40rem;
       margin-bottom: 0.5rem;
@@ -77,6 +79,7 @@
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     gap: 1rem; // 行と列の間に余白
     justify-items: start; // 各セルの中の要素を左寄せに
+
     @include tab {
       display: none;
     }
@@ -136,7 +139,7 @@
     background: #5c4123;
     color: $textcolor-footer;
     font-size: 2rem;
-    @include rounded(5rem);
+    border-radius: 5rem;
     transition: scale 0.5s ease;
     box-shadow: 5px 2px 9px #3d2b17;
   }

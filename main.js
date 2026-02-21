@@ -68,11 +68,11 @@ else {
     }
 }
 /*=================================================
-PICK UP スワイパー  GSAP
+PICK UP   GSAP
 ===================================================*/
 $(function () {
-    const slider = document.querySelector('.swiper');
-    const lane = document.querySelector('.swiper-card'); // ← カードのレーン
+    const slider = document.querySelector('.pickup__wrapper');
+    const lane = document.querySelector('.pickup__cards'); // ← カードのレーン
     const overlay = document.querySelector('.slot-overlay.title');
     const cards = gsap.utils.toArray('.card');
 
@@ -212,11 +212,10 @@ $(function () {
 });
 
 /*=================================================
-FIND/voice スライダー jQuery（＋Slick）
+FIND/voice Swiper
 ===================================================*/
 $(function () {
-
-    $('.find__content.slider').slick({
+    $('.find__content').slick({
         variableWidth: true, // 4th slide partly visible
         slidesToScroll: 1,
         centerMode: true,
@@ -239,30 +238,16 @@ $(function () {
         ]
     });
 });
-
-const swiper = new Swiper('.swiper', {
-    loop: true,               // infinite: true 相当
-    slidesPerView: 1,         // slidesToShow: 1 相当
-    centeredSlides: true,     // centerMode: true 相当
-    speed: 600,               // speed: 600 相当
-    autoHeight: true,         // adaptiveHeight: true 相当
-
-    // 矢印の設定
+// =================================================
+// voiceのSwiper
+const voiceSwiper = new Swiper('.voice__wrapper', {
+    loop: true,
+    slidesPerView: 1,
+    speed: 600,
     navigation: {
-        nextEl: '.next-arrow--voice',
         prevEl: '.prev-arrow--voice',
+        nextEl: '.next-arrow--voice',
     },
-
-    // レスポンシブ設定（breakpointsの数値の扱いがSlickと逆なので注意）
-    breakpoints: {
-        481: {
-            slidesPerView: 1,
-            spaceBetween: 20, // centerPaddingの代わりに余白で調整することが多い
-        },
-        801: {
-            // PCサイズの設定
-        }
-    }
 });
 
 // =================================================

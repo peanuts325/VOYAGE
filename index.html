@@ -7,16 +7,14 @@
     <meta name="format-detection" content="telephone=no">
     <title>VOYAGE</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -44,500 +42,510 @@
             </div>
         </div>
     </div>
-        <!-- =============================================== -->
-        <!-- ヘッダー -->
-        <!-- =============================================== -->
-        <header class="header" id="header">
-            <div class="overlay"></div>
-            <!-- ===============ロゴ ===============-->
-            <h1 class="pointer-events">
-                <a href="index.html">
-                    <img src="img/logo.white.svg" alt="VOYAGEロゴ" />
-                </a>
-            </h1>
-            <nav class="nav pointer-events">
-                <!-- ===============ナビゲーション=============== -->
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="about.html" class="nav__link hover_line ">ABOUT</a></li>
-                    <li class="nav__item"><a href="service.html" class="nav__link  hover_line ">SERVICE</a></li>
-                    <li class="nav__item"><a href="journal.html" class="nav__link  hover_line ">JOURNAL</a>
-                    </li>
-                    <li class="nav__item"><a href="contact.html" class="nav__link  hover_line ">CONTACT</a></li>
-                </ul>
-            </nav>
-            <!-- ===============hamberger menu　ハンバーガーメニュー=============== -->
-            <div class="hamburger pointer-events">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <!-- =============================================== -->
+    <!-- ヘッダー -->
+    <!-- =============================================== -->
+    <header class="header" id="header">
+        <div class="overlay"></div>
+        <!-- ===============ロゴ ===============-->
+        <h1 class="pointer-events">
+            <a href="index.html">
+                <img src="img/logo.white.svg" alt="VOYAGEロゴ" />
+            </a>
+        </h1>
+        <nav class="nav pointer-events">
+            <!-- ===============ナビゲーション=============== -->
+            <ul class="nav__list">
+                <li class="nav__item"><a href="about.html" class="nav__link hover_line ">ABOUT</a></li>
+                <li class="nav__item"><a href="service.html" class="nav__link  hover_line ">SERVICE</a></li>
+                <li class="nav__item"><a href="journal.html" class="nav__link  hover_line ">JOURNAL</a>
+                </li>
+                <li class="nav__item"><a href="contact.html" class="nav__link  hover_line ">CONTACT</a></li>
+            </ul>
+        </nav>
+        <!-- ===============hamberger menu　ハンバーガーメニュー=============== -->
+        <div class="hamburger pointer-events">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-            <!-- ===============hamberger menu　open　ハンバーガーメニューが押されたとき=============== -->
-            <div class="menu js-menu">
-                <nav class="menu__nav">
-                    <ul class="menu__list">
-                        <li class="menu__item"><a class="menu__link" href="index.html">HOME</a></li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="about.html">ABOUT</a>
-                            <ul class="menu__sublist">
-                                <li class="menu__subitem"><a href="about.html#concept" class="menu__sublink">
-                                        コンセプト</a></li>
-                                <li class="menu__subitem"><a href="about.html#mission" class="menu__sublink">MISSION
-                                        -
-                                        想い</a></li>
-                                <li class="menu__subitem"><a href="about.html#voice" class="menu__sublink">
-                                        お客様の声</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu__item"><a class="menu__link" href="service.html">SERVICE</a></li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="journal.html">JOURNAL</a>
-                            <ul class="menu__sublist">
-                                <li class="menu__subitem"><a href="journal.html#pickup" class="menu__sublink">PICK
-                                        UP - ピックアップ</a></li>
-                                <li class="menu__subitem"><a href="journal.html#new" class="menu__sublink">NEW -
-                                        新着情報</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu__item"><a class="menu__link" href="contact.html">CONTACT</a></li>
-                    </ul>
-                    <div class="menu__sns">
+        <!-- ===============hamberger menu　open　ハンバーガーメニューが押されたとき=============== -->
+        <div class="menu js-menu">
+            <nav class="menu__nav">
+                <ul class="menu__list">
+                    <li class="menu__item"><a class="menu__link" href="index.html">HOME</a></li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="about.html">ABOUT</a>
+                        <ul class="menu__sublist">
+                            <li class="menu__subitem"><a href="about.html#concept" class="menu__sublink">
+                                    コンセプト</a></li>
+                            <li class="menu__subitem"><a href="about.html#mission" class="menu__sublink">MISSION
+                                    -
+                                    想い</a></li>
+                            <li class="menu__subitem"><a href="about.html#voice" class="menu__sublink">
+                                    お客様の声</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__item"><a class="menu__link" href="service.html">SERVICE</a></li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="journal.html">JOURNAL</a>
+                        <ul class="menu__sublist">
+                            <li class="menu__subitem"><a href="journal.html#pickup" class="menu__sublink">PICK
+                                    UP - ピックアップ</a></li>
+                            <li class="menu__subitem"><a href="journal.html#new" class="menu__sublink">NEW -
+                                    新着情報</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__item"><a class="menu__link" href="contact.html">CONTACT</a></li>
+                </ul>
+                <div class="menu__sns">
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =============================================== -->
+    <!-- メイン -->
+    <!-- =============================================== -->
+    <main>
+        <!-- ===============メインビジュアル=============== -->
+        <section class="mainvisual">
+            <div class="mainvisual__container mainvisual__container--home">
+                <img class="mainvisual__logo mainvisual__logo--home" src="img/logo.white.svg" alt="">
+                <h3 class="mainvisual__heading mainvisual__heading--home">ESCAPE<br>
+                    TO THE ISLAND</h3>
+            </div>
+            <img class="wave-top" src="img/wave_top_flat_white.svg" alt="">
+        </section>
+
+        <!-- =============================================== -->
+        <!-- ピックアップ-->
+        <!-- =============================================== -->
+        <section class="pickup">
+            <div class="pickup__wrapper">
+                <div class="slot-overlay title">
+                    <h3 class="pickup__title pickup__title--large">VOYA <br>JOURNAL</h3>
+                    <p class="pickup__title pickup__title--small">ジャーナル</p>
+                </div>
+                <div class="pickup__cards">
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/beach-article.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">青すぎる世界</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/service_mainvisual.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">至福の島旅</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/coconut.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">獲れたてココナッツ</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/beachsunset-article.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">夕焼けで染まる世界</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/article-santorini.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">白と青だけの世界</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/find-ocean.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">秘境の海エルニド</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/watervilla.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">水上ヴィラ</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/article_sunset.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">夕焼けで染まる世界</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="article.html" class="pickup-link" draggable="false">
+                            <img src="img/find-beach.webp" alt="#" class="pickup__img" draggable="false">
+                            <div class="pickup__textbox">
+                                <p class="pickup__text">海に浮かぶ幻の島</p>
+                                <span class="arrow arrow--right--small"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =============================================== -->
+        <!-- ABOUT-->
+        <!-- =============================================== -->
+        <section class="split-section split-section--abt wave-down-padding wave-up-padding">
+            <img class="wave-bottom" src="img/wave_bottom_flat_shade_gold.svg" alt="">
+            <div class="split-section__wrapper split-section__wrapper--about">
+                <header class="section__header">
+                    <img src="img/logo.icon.white.svg" alt="アイコン" class="section__icon">
+                    <h2 class="section__title">ABOUT</h2>
+                    <p class="section__subtitle">VOYAGEについて</p>
+                </header>
+                <div class="split-section__content">
+                    <img src="img/beach-article.webp" alt="写真" class="split-section__img split-section__img--left">
+                    <div class="split-section__textbox">
+                        <h3 class="split-section__catchcopy">見つけよう、<br>あなただけの島旅行。</h3>
+                        <div class="split-section__description">
+                            <p class="split-section__text">VOYAGEは、「旅の自由化」をミッションに掲げる、<br>
+                                島専門の旅行企画会社です。</p>
+                        </div>
+                        <div class="split-section__description">
+                            <p class="split-section__text">毎日がんばるあなたにこそ、<br>
+                                自分らしく過ごせる旅の時間を届けたい。</p>
+                        </div>
+                        <div class="split-section__description">
+                            <p class="split-section__text">VOYAGEでは、世界中の島々を舞台に、<br>
+                                あなただけの“わがまま旅”をデザインします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="wave-top" src="img/wave_top_right_shade_gold.svg" alt="">
+        </section>
+
+        <!-- =============================================== -->
+        <!-- FIND-->
+        <!-- =============================================== -->
+        <section class="find">
+            <header class="section__header">
+                <img src="img/logo.icon.blue.svg" alt="アイコン" class="section__icon">
+                <h2 class="section__title">FIND</h2>
+                <p class="section__subtitle">島を見つける</p>
+            </header>
+            <div class="find__wrapper">
+                <ul class="find__content slider">
+                    <li class="find__card find__card--santorini">
+                        <img src="img/santorini.webp" alt="サントリーニ島" class="find__card-img">
+                        <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
+                        <div class="find__card-text">
+                            <p class="find__card-location">ギリシャ</p>
+                            <p class="find__card-place">サントリーニ島</p>
+                            <h4 class="find__card-headline">白と青だけの<br>
+                                世界へ</h4>
+                            <p class="find__card-description">世界一美しい島で過ごす非日常</p>
+                        </div>
+                        <a href="#" class="find__card-button find__card-button--santorini">詳しく見る</a>
+                    </li>
+                    <li class="find__card find__card--borabora">
+                        <img src="img/find_borabora.webp" alt="ボラボラ島" class="find__card-img">
+                        <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
+                        <div class="find__card-text">
+                            <p class="find__card-location">モルディブ</p>
+                            <p class="find__card-place">ボラボラ島</p>
+                            <h4 class="find__card-headline">海と空だけの<br>
+                                やすらぎへ</h4>
+                            <p class="find__card-description">白い砂浜とヤシの木に囲まれた
+                                <br>静かな楽園
+                            </p>
+                        </div>
+                        <a href="#" class="find__card-button find__card-button--borabora">詳しく見る</a>
+                    </li>
+                    <li class="find__card find__card--krabi">
+                        <img src="img/krabi.webp" alt="クラビー" class="find__card-img">
+                        <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
+                        <div class="find__card-text">
+                            <p class="find__card-location">タイ</p>
+                            <p class="find__card-place">クラビー</p>
+                            <h4 class="find__card-headline">エメラルドの海へ<br>
+                                漕ぎ出そう</h4>
+                            <p class="find__card-description">無数の島々と静かな入り江</p>
+                        </div>
+                        <a href="#" class="find__card-button find__card-button--krabi">詳しく見る</a>
+                    </li>
+                    <li class="find__card find__card--watervilla">
+                        <img src="img/watervilla.webp" alt="水上ヴィラ" class="find__card-img">
+                        <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
+                        <div class="find__card-text">
+                            <p class="find__card-location">インド洋</p>
+                            <p class="find__card-place">モルディブ</p>
+                            <h4 class="find__card-headline">心までとろける<br>
+                                海の上の休日</h4>
+                            <p class="find__card-description">水上ヴィラで過ごす<br>
+                                世界屈指のラグジュアリー体験</p>
+                        </div>
+                        <a href="#" class="find__card-button find__card-button--watervilla">詳しく見る</a>
+                    </li>
+                    <li class="find__card find__card--beach">
+                        <img src="img/find-beach.webp" alt="サンドバンク" class="find__card-img">
+                        <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
+                        <div class="find__card-text">
+                            <p class="find__card-location">モルディブ</p>
+                            <p class="find__card-place">サンドバンク</p>
+                            <h4 class="find__card-headline">海に浮かぶ<br>
+                                幻の島</h4>
+                            <p class="find__card-description">青い海に抱かれる、わずか数時間の楽園</p>
+                        </div>
+                        <a href="#" class="find__card-button find__card-button--beach">詳しく見る</a>
+                    </li>
+                    <li class="find__card find__card--boat">
+                        <img src="img/find-boat.webp" alt="プライベートアイランド" class="find__card-img">
+                        <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
+                        <div class="find__card-text">
+                            <p class="find__card-location">モルディブ</p>
+                            <p class="find__card-place">プライベートアイランド</p>
+                            <h4 class="find__card-headline">碧い楽園で<br>
+                                至福の休日</h4>
+                            <p class="find__card-description">インド洋が誇る、世界最高峰のリゾート</p>
+                        </div>
+                        <a href="#" class="find__card-button find__card-button--boat">詳しく見る</a>
+                    </li>
+                    <li class="find__card find__card--ocean">
+                        <img src="img/find-ocean.webp" alt="エルニド" class="find__card-img">
+                        <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
+                        <div class="find__card-text">
+                            <p class="find__card-location">フィリピン</p>
+                            <p class="find__card-place">エルニド</p>
+                            <h4 class="find__card-headline">秘境の海と<br>
+                                隠れ家の島々へ</h4>
+                            <p class="find__card-description">冒険と癒しが交差するフィリピンの秘境</p>
+                        </div>
+                        <a href="#" class="find__card-button find__card-button--ocean">詳しく見る</a>
+                    </li>
+                </ul>
+                <div class="arrow_box">
+                </div>
+            </div>
+        </section>
+
+        <!-- =============================================== -->
+        <!-- FEATURE -->
+        <!-- =============================================== -->
+        <div class="bg-wrapper" aria-hidden="true"></div>
+        <section class="feature wave-down-padding">
+            <img class="wave-bottom" src="img/wave_bottom_right_shade_white.svg" alt="">
+            <header class="section__header">
+                <img src="img/logo.icon.white.svg" alt="アイコン" class="section__icon">
+                <h2 class="section__title section__title--features">FEATURES</h2>
+                <p class="section__subtitle section__subtitle--features">VOYAGEの旅が特別な理由</p>
+            </header>
+            <section class="feature__content">
+                <div class="feature__card">
+                    <img class="feature__img" src="img/icon_palm.svg" alt="">
+                    <div class="feature__textbox">
+                        <h3 class="feature__heading">島で、心をほどく旅を </h3>
+                        <p class="feature__text">私たちがご案内するのは、世界中の美しい「島」。</p>
+                        <p class="feature__text">にぎやかな観光地だけでなく、波の音しか聞こえない静かな島も。 </p>
+                        <p class="feature__text">あなたの心がゆるむ場所を、一緒に探します。 </p>
+                    </div>
+                    <div class="scroll-indicator">
+                        <div class="dot"></div>
+                        <div class="dot active"></div> <!-- ← これが水色の丸 -->
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="feature__content">
+                <div class="feature__card">
+                    <img class="feature__img" src="img/icon_man.svg" alt="">
+                    <div class="feature__textbox">
+                        <h3 class="feature__heading">旅づくりは、顔の見える関係から</h3>
+                        <p class="feature__text">VOYAGEでは、あなたの旅に一人の専任プランナーが寄り添います。</p>
+                        <p class="feature__text">メールのやりとりも、相談も、ちょっとした迷いごとも。</p>
+                        <p class="feature__text">まるで友人に旅の相談をするように、気軽に頼ってください。 </p>
+                    </div>
+                    <div class="scroll-indicator">
+                        <div class="dot"></div>
+                        <div class="dot active"></div> <!-- ← これが水色の丸 -->
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="feature__content">
+                <div class="feature__card">
+                    <img class="feature__img" src="img/icon_surf.svg" alt="">
+                    <div class="feature__textbox">
+                        <h3 class="feature__heading">思い出になる瞬間を、大切に </h3>
+                        <p class="feature__text">旅の途中でふと見た空、何気ない会話、島の人のやさしさ。 </p>
+                        <p class="feature__text">そうした“ささやかな出来事”こそ、旅の宝物だと思っています。 </p>
+                        <p class="feature__text">VOYAGEは、そんな瞬間に出会える旅を、丁寧に仕立てます。</p>
+                    </div>
+                    <div class="scroll-indicator">
+                        <div class="dot"></div>
+                        <div class="dot active"></div> <!-- ← これが水色の丸 -->
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- =============================================== -->
+        <!-- SCROLL -->
+        <!-- =============================================== -->
+        <section class="scroll">
+            <div class="scroll-section">
+                <div class="images-wrapper">
+                    <img src="img/scroll(1).webp" class="image-item">
+                    <img src="img/scroll(2).webp" class="image-item">
+                    <img src="img/scroll(3).webp" class="image-item">
+                    <img src="img/scroll(4).webp" class="image-item">
+                    <img src="img/scroll(6).webp" class="image-item">
+                    <img src="img/scroll(3).webp" class="image-item">
+                    <img src="img/scroll(5).webp" class="image-item">
+                    <div class="floating-text ">
+                        <p>あなただけの旅が</p>
+                        <p>ここにある</p>
+
+                    </div>
+                </div>
+            </div>
+            <img src="img/wave_top_flat_white.svg" alt="" class="wave-top">
+        </section>
+        <!-- =============================================== -->
+        <!-- INFOMATION -->
+        <!-- =============================================== -->
+        <section class="info  wave-up-padding">
+            <header class="section__header">
+                <img src="img/logo.icon.blue.svg" alt="アイコン" class="section__icon">
+                <h2 class="section__title">IMFORMATION</h2>
+                <p class="section__subtitle">ご連絡先</p>
+            </header>
+            <div class="info__box">
+                <div class="info__item">
+                    <span class="info__label">ACCESS</span>
+                    <p class="info__text">東京都渋谷区桜ヶ丘町16-8 グラスシティ渋谷 6F</p>
+                </div>
+                <div class="info__item">
+                    <span class="info__label">TELL</span>
+                    <p class="info__text">03-4567-8910</p>
+                </div>
+                <div class="info__item">
+                    <span class="info__label">HOUR</span>
+                    <p class="info__text">平日 10:00〜18:00（土日祝休）</p>
+                </div>
+                <div class="info__item">
+                    <span class="info__label">MAIL</span>
+                    <p class="info__text">contact@voyage-travel.jp</p>
+                </div>
+            </div>
+            <div class="info__map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.8342583495214!2d139.69835477623036!3d35.65645493133388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b576769955f%3A0x7f23b37bc64dab00!2z44CSMTUwLTAwMzEg5p2x5Lqs6YO95riL6LC35Yy65qGc5LiY55S677yR77yW4oiS77yYIOOCouODiOODqeOCueahnOS4mOODk-ODqw!5e0!3m2!1sja!2sjp!4v1747500609723!5m2!1sja!2sjp"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <img src="img/wavefooter.svg" alt="" class="wave-top">
+        </section>
+    </main>
+
+    <!-- =============================================== -->
+    <!-- フッター -->
+    <!-- =============================================== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <h2 class="footer__catchcopy">あなたの旅は、まだ見ぬ物語。</h2>
+            <div class="footer__container">
+                <div class="footer__info">
+                    <img class="footer__info-img" src="img/logo.white.svg" alt="VOYAGEロゴ" />
+                    <a href="tel:0312341234" class="phone-link">TEL 03-1234-1234</a>
+                    <p>東京都渋谷区神宮前6丁目16-28</p>
+                    <p>グラスシティ渋谷 6F</p>
+                    <p>平日 10:00〜18:00（土日祝休）</p>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__column">
+                        <a href="about.html">
+                            <h3 class="footer__menuitem">ABOUT</h3>
+                        </a>
+                        <ul>
+                            <li><a href="about.html#concept">CONCEPT <span>コンセプト</span></a></li>
+                            <li><a href="about.html#mission">MISSION <span>想い</span></a></li>
+                            <li><a href="about.html#voice">VOICES <span>お客様の声</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <a href="journal.html">
+                            <h3 class="footer__menuitem">JOURNAL</h3>
+                        </a>
+                        <ul>
+                            <li><a href="#pickup">PICK UP<span>ピックアップ</span></a></li>
+                            <li><a href="#new">NEW<span>新着情報</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <a href="service.html">
+                            <h3 class="footer__menuitem">SERVICE</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__link">
+                    <div class="footer__sns">
                         <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     </div>
-                </nav>
-            </div>
-        </header>
-
-        <!-- =============================================== -->
-        <!-- メイン -->
-        <!-- =============================================== -->
-        <main>
-            <!-- ===============メインビジュアル=============== -->
-            <section class="mainvisual">
-                <div class="mainvisual__container mainvisual__container--home">
-                    <img class="mainvisual__logo mainvisual__logo--home" src="img/logo.white.svg" alt="">
-                    <h3 class="mainvisual__heading mainvisual__heading--home">ESCAPE<br>
-                        TO THE ISLAND</h3>
-                </div>
-                <img class="wave-top" src="img/wave_top_flat_white.svg" alt="">
-            </section>
-
-            <!-- =============================================== -->
-            <!-- ピックアップ-->
-            <!-- =============================================== -->
-            <section class="pickup">
-                <div class="swiper">
-                    <div class="slot-overlay title">
-                        <h3 class="pickup__title pickup__title--large">VOYA <br>JOURNAL</h3>
-                        <p class="pickup__title pickup__title--small">ジャーナル</p>
-                    </div>
-                    <div class="swiper-card">
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/beach-article.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">青すぎる世界</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/service_mainvisual.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">至福の島旅</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/coconut.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">獲れたてココナッツ</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/beachsunset-article.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">夕焼けで染まる世界</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/article-santorini.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">白と青だけの世界</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/find-ocean.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">秘境の海エルニド</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/watervilla.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">水上ヴィラ</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/article_sunset.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">夕焼けで染まる世界</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a href="article.html" class="pickup-link">
-                                <img src="img/find-beach.webp" alt="#" class="pickup__img">
-                                <div class="pickup__textbox">
-                                    <p class="pickup__text">海に浮かぶ幻の島</p>
-                                    <span class="arrow arrow--right--small"></span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- =============================================== -->
-            <!-- ABOUT-->
-            <!-- =============================================== -->
-            <section class="split-section split-section--abt wave-down-padding wave-up-padding">
-                <img class="wave-bottom" src="img/wave_bottom_flat_shade_gold.svg" alt="">
-                <div class="split-section__wrapper split-section__wrapper--about">
-                    <header class="section__header">
-                        <img src="img/logo.icon.white.svg" alt="アイコン" class="section__icon">
-                        <h2 class="section__title">ABOUT</h2>
-                        <p class="section__subtitle">VOYAGEについて</p>
-                    </header>
-                    <div class="split-section__content">
-                        <img src="img/beach-article.webp" alt="写真" class="split-section__img split-section__img--left">
-                        <div class="split-section__textbox">
-                            <h3 class="split-section__catchcopy">見つけよう、<br>あなただけの島旅行。</h3>
-                            <div class="split-section__description">
-                                <p class="split-section__text">VOYAGEは、「旅の自由化」をミッションに掲げる、<br>
-                                    島専門の旅行企画会社です。</p>
-                            </div>
-                            <div class="split-section__description">
-                                <p class="split-section__text">毎日がんばるあなたにこそ、<br>
-                                    自分らしく過ごせる旅の時間を届けたい。</p>
-                            </div>
-                            <div class="split-section__description">
-                                <p class="split-section__text">VOYAGEでは、世界中の島々を舞台に、<br>
-                                    あなただけの“わがまま旅”をデザインします。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img class="wave-top" src="img/wave_top_right_shade_gold.svg" alt="">
-            </section>
-
-            <!-- =============================================== -->
-            <!-- FIND-->
-            <!-- =============================================== -->
-            <section class="find">
-                <header class="section__header">
-                    <img src="img/logo.icon.blue.svg" alt="アイコン" class="section__icon">
-                    <h2 class="section__title">FIND</h2>
-                    <p class="section__subtitle">島を見つける</p>
-                </header>
-                <div class="find__wrapper">
-                    <ul class="find__content slider ">
-                        <li class="find__card find__card--santorini">
-                            <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
-                            <div class="find__card-text">
-                                <p class="find__card-location">ギリシャ</p>
-                                <p class="find__card-place">サントリーニ島</p>
-                                <h4 class="find__card-headline">白と青だけの<br>
-                                    世界へ</h4>
-                                <p class="find__card-description">世界一美しい島で過ごす非日常</p>
-                            </div>
-                            <a href="#" class="find__card-button find__card-button--santorini">詳しく見る</a>
-                        </li>
-                        <li class="find__card find__card--borabora">
-                            <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
-                            <div class="find__card-text">
-                                <p class="find__card-location">モルディブ</p>
-                                <p class="find__card-place">ボラボラ島</p>
-                                <h4 class="find__card-headline">海と空だけの<br>
-                                    やすらぎへ</h4>
-                                <p class="find__card-description">白い砂浜とヤシの木に囲まれた
-                                    <br>静かな楽園
-                                </p>
-                            </div>
-                            <a href="#" class="find__card-button find__card-button--borabora">詳しく見る</a>
-                        </li>
-                        <li class="find__card find__card--krabi">
-                            <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
-                            <div class="find__card-text">
-                                <p class="find__card-location">タイ</p>
-                                <p class="find__card-place">クラビー</p>
-                                <h4 class="find__card-headline">エメラルドの海へ<br>
-                                    漕ぎ出そう</h4>
-                                <p class="find__card-description">無数の島々と静かな入り江</p>
-                            </div>
-                            <a href="#" class="find__card-button find__card-button--krabi">詳しく見る</a>
-                        </li>
-                        <li class="find__card find__card--watervilla">
-                            <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
-                            <div class="find__card-text">
-                                <p class="find__card-location">インド洋</p>
-                                <p class="find__card-place">モルディブ</p>
-                                <h4 class="find__card-headline">心までとろける<br>
-                                    海の上の休日</h4>
-                                <p class="find__card-description">水上ヴィラで過ごす<br>
-                                    世界屈指のラグジュアリー体験</p>
-                            </div>
-                            <a href="#" class="find__card-button find__card-button--watervilla">詳しく見る</a>
-                        </li>
-                        <li class="find__card find__card--beach">
-                            <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
-                            <div class="find__card-text">
-                                <p class="find__card-location">モルディブ</p>
-                                <p class="find__card-place">サンドバンク</p>
-                                <h4 class="find__card-headline">海に浮かぶ<br>
-                                    幻の島</h4>
-                                <p class="find__card-description">青い海に抱かれる、わずか数時間の楽園</p>
-                            </div>
-                            <a href="#" class="find__card-button find__card-button--beach">詳しく見る</a>
-                        </li>
-                        <li class="find__card find__card--boat">
-                            <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
-                            <div class="find__card-text">
-                                <p class="find__card-location">モルディブ</p>
-                                <p class="find__card-place">プライベートアイランド</p>
-                                <h4 class="find__card-headline">碧い楽園で<br>
-                                    至福の休日</h4>
-                                <p class="find__card-description">インド洋が誇る、世界最高峰のリゾート</p>
-                            </div>
-                            <a href="#" class="find__card-button find__card-button--boat">詳しく見る</a>
-                        </li>
-                        <li class="find__card find__card--ocean">
-                            <div class="find__card-overlay"></div> <!-- ← 幕のレイヤー -->
-                            <div class="find__card-text">
-                                <p class="find__card-location">フィリピン</p>
-                                <p class="find__card-place">エルニド</p>
-                                <h4 class="find__card-headline">秘境の海と<br>
-                                    隠れ家の島々へ</h4>
-                                <p class="find__card-description">冒険と癒しが交差するフィリピンの秘境</p>
-                            </div>
-                            <a href="#" class="find__card-button find__card-button--ocean">詳しく見る</a>
-                        </li>
-                    </ul>
-                    <div class="arrow_box"></div>
-                </div>
-            </section>
-
-            <!-- =============================================== -->
-            <!-- FEATURE -->
-            <!-- =============================================== -->
-            <div class="bg-wrapper" aria-hidden="true"></div>
-            <section class="feature wave-down-padding">
-                <img class="wave-bottom" src="img/wave_bottom_right_shade_white.svg" alt="">
-                <header class="section__header">
-                    <img src="img/logo.icon.white.svg" alt="アイコン" class="section__icon">
-                    <h2 class="section__title section__title--features">FEATURES</h2>
-                    <p class="section__subtitle section__subtitle--features">VOYAGEの旅が特別な理由</p>
-                </header>
-                <section class="feature__content">
-                    <div class="feature__card">
-                        <img class="feature__img" src="img/icon_palm.svg" alt="">
-                        <div class="feature__textbox">
-                            <h3 class="feature__heading">島で、心をほどく旅を </h3>
-                            <p class="feature__text">私たちがご案内するのは、世界中の美しい「島」。</p>
-                            <p class="feature__text">にぎやかな観光地だけでなく、波の音しか聞こえない静かな島も。 </p>
-                            <p class="feature__text">あなたの心がゆるむ場所を、一緒に探します。 </p>
-                        </div>
-                        <div class="scroll-indicator">
-                            <div class="dot"></div>
-                            <div class="dot active"></div> <!-- ← これが水色の丸 -->
-                            <div class="dot"></div>
-                        </div>
-                    </div>
-                </section>
-                <section class="feature__content">
-                    <div class="feature__card">
-                        <img class="feature__img" src="img/icon_man.svg" alt="">
-                        <div class="feature__textbox">
-                            <h3 class="feature__heading">旅づくりは、顔の見える関係から</h3>
-                            <p class="feature__text">VOYAGEでは、あなたの旅に一人の専任プランナーが寄り添います。</p>
-                            <p class="feature__text">メールのやりとりも、相談も、ちょっとした迷いごとも。</p>
-                            <p class="feature__text">まるで友人に旅の相談をするように、気軽に頼ってください。 </p>
-                        </div>
-                        <div class="scroll-indicator">
-                            <div class="dot"></div>
-                            <div class="dot active"></div> <!-- ← これが水色の丸 -->
-                            <div class="dot"></div>
-                        </div>
-                    </div>
-                </section>
-                <section class="feature__content">
-                    <div class="feature__card">
-                        <img class="feature__img" src="img/icon_surf.svg" alt="">
-                        <div class="feature__textbox">
-                            <h3 class="feature__heading">思い出になる瞬間を、大切に </h3>
-                            <p class="feature__text">旅の途中でふと見た空、何気ない会話、島の人のやさしさ。 </p>
-                            <p class="feature__text">そうした“ささやかな出来事”こそ、旅の宝物だと思っています。 </p>
-                            <p class="feature__text">VOYAGEは、そんな瞬間に出会える旅を、丁寧に仕立てます。</p>
-                        </div>
-                        <div class="scroll-indicator">
-                            <div class="dot"></div>
-                            <div class="dot active"></div> <!-- ← これが水色の丸 -->
-                            <div class="dot"></div>
-                        </div>
-                    </div>
-                </section>
-            </section>
-            <!-- =============================================== -->
-            <!-- SCROLL -->
-            <!-- =============================================== -->
-            <section class="scroll">
-                <div class="scroll-section">
-                    <div class="images-wrapper">
-                        <img src="img/scroll(1).webp" class="image-item">
-                        <img src="img/scroll(2).webp" class="image-item">
-                        <img src="img/scroll(3).webp" class="image-item">
-                        <img src="img/scroll(4).webp" class="image-item">
-                        <img src="img/scroll(6).webp" class="image-item">
-                        <img src="img/scroll(3).webp" class="image-item">
-                        <img src="img/scroll(5).webp" class="image-item">
-                        <div class="floating-text ">
-                            <p>あなただけの旅が</p>
-                            <p>ここにある</p>
-
-                        </div>
-                    </div>
-                </div>
-                <img src="img/wave_top_flat_white.svg" alt="" class="wave-top">
-            </section>
-            <!-- =============================================== -->
-            <!-- INFOMATION -->
-            <!-- =============================================== -->
-            <section class="info  wave-up-padding">
-                <header class="section__header">
-                    <img src="img/logo.icon.blue.svg" alt="アイコン" class="section__icon">
-                    <h2 class="section__title">IMFORMATION</h2>
-                    <p class="section__subtitle">ご連絡先</p>
-                </header>
-                <div class="info__box">
-                    <div class="info__item">
-                        <span class="info__label">ACCESS</span>
-                        <p class="info__text">東京都渋谷区桜ヶ丘町16-8 グラスシティ渋谷 6F</p>
-                    </div>
-                    <div class="info__item">
-                        <span class="info__label">TELL</span>
-                        <p class="info__text">03-4567-8910</p>
-                    </div>
-                    <div class="info__item">
-                        <span class="info__label">HOUR</span>
-                        <p class="info__text">平日 10:00〜18:00（土日祝休）</p>
-                    </div>
-                    <div class="info__item">
-                        <span class="info__label">MAIL</span>
-                        <p class="info__text">contact@voyage-travel.jp</p>
-                    </div>
-                </div>
-                <div class="info__map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.8342583495214!2d139.69835477623036!3d35.65645493133388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b576769955f%3A0x7f23b37bc64dab00!2z44CSMTUwLTAwMzEg5p2x5Lqs6YO95riL6LC35Yy65qGc5LiY55S677yR77yW4oiS77yYIOOCouODiOODqeOCueahnOS4mOODk-ODqw!5e0!3m2!1sja!2sjp!4v1747500609723!5m2!1sja!2sjp"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <img src="img/wavefooter.svg" alt="" class="wave-top">
-            </section>
-        </main>
-
-        <!-- =============================================== -->
-        <!-- フッター -->
-        <!-- =============================================== -->
-        <footer class="footer">
-            <div class="footer__inner">
-                <h2 class="footer__catchcopy">あなたの旅は、まだ見ぬ物語。</h2>
-                <div class="footer__container">
-                    <div class="footer__info">
-                        <img class="footer__info-img" src="img/logo.white.svg" alt="VOYAGEロゴ" />
-                        <a href="tel:0312341234" class="phone-link">TEL 03-1234-1234</a>
-                        <p>東京都渋谷区神宮前6丁目16-28</p>
-                        <p>グラスシティ渋谷 6F</p>
-                        <p>平日 10:00〜18:00（土日祝休）</p>
-                    </div>
-                    <div class="footer__nav">
-                        <div class="footer__column">
-                            <a href="about.html">
-                                <h3 class="footer__menuitem">ABOUT</h3>
-                            </a>
-                            <ul>
-                                <li><a href="about.html#concept">CONCEPT <span>コンセプト</span></a></li>
-                                <li><a href="about.html#mission">MISSION <span>想い</span></a></li>
-                                <li><a href="about.html#voice">VOICES <span>お客様の声</span></a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__column">
-                            <a href="journal.html">
-                                <h3 class="footer__menuitem">JOURNAL</h3>
-                            </a>
-                            <ul>
-                                <li><a href="#pickup">PICK UP<span>ピックアップ</span></a></li>
-                                <li><a href="#new">NEW<span>新着情報</span></a></li>
-                            </ul>
-                        </div>
-                        <div class="footer__column">
-                            <a href="service.html">
-                                <h3 class="footer__menuitem">SERVICE</h3>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="footer__link">
-                        <div class="footer__sns">
-                            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                        </div>
-                        <a href="contact.html" class="animated-button">
-                            CONTACT
-                        </a>
-                    </div>
-                </div>
-                <div class="totop totop--ft">
-                    <a class="block" href="#top">
-                        <p class="arrow__go">↑</p>
-                        <div class="totop__container">
-                            <svg class="circleText" viewBox="0 0 100 100">
-                                <path id="circle" class="circleText__circle" d="M 0 50 A 50 50 0 1 1 0 51 z" />
-                                <text class="circleText__text">
-                                    <textpath xlink:href="#circle">GO BACK TO THE TOP・GO BACK TO THE TOP</textpath>
-                                </text>
-                            </svg>
-                        </div>
+                    <a href="contact.html" class="animated-button">
+                        CONTACT
                     </a>
                 </div>
             </div>
-            <p class="copyright">&copy; VOYAGE</p>
-        </footer>
+            <div class="totop totop--ft">
+                <a class="block" href="#top">
+                    <p class="arrow__go">↑</p>
+                    <div class="totop__container">
+                        <svg class="circleText" viewBox="0 0 100 100">
+                            <path id="circle" class="circleText__circle" d="M 0 50 A 50 50 0 1 1 0 51 z" />
+                            <text class="circleText__text">
+                                <textpath xlink:href="#circle">GO BACK TO THE TOP・GO BACK TO THE TOP</textpath>
+                            </text>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <p class="copyright">&copy; VOYAGE</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 

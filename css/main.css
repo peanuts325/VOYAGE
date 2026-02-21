@@ -63,6 +63,8 @@
   justify-content: flex-end;
   margin: 2rem 2rem 0;
   position: relative;
+  z-index: 10;
+  pointer-events: none;
 }
 .arrow_box--voice {
   position: absolute;
@@ -75,6 +77,7 @@
 
 .prev-arrow,
 .next-arrow {
+  pointer-events: auto;
   display: block;
   width: 7rem;
   height: 7rem;
@@ -991,13 +994,10 @@ img {
   border: 3px solid #FFFFFF;
   margin: 160px auto;
   max-width: 1200px;
-  border-radius: 2.8rem;
-}
-.info__map iframe {
-  border-radius: 2.8rem;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  border-radius: 2.8rem iframe;
+  border-radius-border-radius: 2.8rem;
+  border-radius-width: 100%;
+  border-radius-object-fit: cover;
 }
 .info .wave {
   width: 100%;
@@ -1550,33 +1550,39 @@ img {
   background: linear-gradient(45deg, #fa709a, #fee140);
 }
 
-.swiper {
-  position: relative;
-  width: 100%;
-}
-
-.slider-wrapper {
-  padding: 40px 0;
-}
-
 .voice {
   background-color: #BAE4E7;
 }
+.voice__wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 .voice__card {
+  width: 100%;
+  padding-block: 4rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 40px;
-  background: #FFFFFF;
-  padding: 30px;
-  margin-inline: 50px;
+}
+.voice__inner {
   max-width: 900px;
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  cursor: pointer;
 }
-.voice__image {
+.voice__img {
   width: 50%;
+  border-radius: 1rem;
 }
-.voice___content {
+.voice__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 50%;
+  background-color: #FFFFFF;
+  padding-inline: 3rem;
+  border-radius: 1rem;
 }
 .voice__title {
   margin-bottom: 10px;
@@ -1712,7 +1718,7 @@ img {
 }
 
 /* スライダー全体は横幅いっぱい */
-.swiper {
+.pickup__wrapper {
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -1721,7 +1727,7 @@ img {
 }
 
 /* カードを入れるレーン */
-.swiper-card {
+.pickup__cards {
   position: relative;
   /* 子カードを絶対配置するため */
 }
@@ -1801,7 +1807,7 @@ img {
 }
 /* 768px以下：タイトルは“通常フロー”で上段に置く（＝重ねない） */
 @media (max-width: 768px) {
-  .swiper.is-mobile .slot-overlay.title {
+  .pickup__wrapper.is-mobile .slot-overlay.title {
     position: static;
     pointer-events: auto;
     width: auto;
@@ -1882,15 +1888,11 @@ img {
 .find {
   background-color: #E1F3F4;
 }
-.find__wrapper {
-  margin-inline: auto;
-}
 .find__content {
   padding-block: 8rem;
-  transition: transform 0.5s ease;
 }
 .find__card {
-  margin-right: 3.2rem;
+  margin-inline: 1.6rem;
   padding-block: 3.2rem;
   position: relative;
   border-radius: 1.6rem;
@@ -1898,42 +1900,26 @@ img {
   width: 33.1rem;
   aspect-ratio: 2/3;
   /* アスペクト比を維持 */
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+}
+.find__card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .find__card-overlay {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background: rgba(30, 58, 64, 0.2);
   z-index: 1;
-  border-radius: 1.6rem;
-}
-.find__card--santorini {
-  background-image: url("../img/santorini.webp");
-}
-.find__card--borabora {
-  background-image: url("../img/find_borabora.webp");
-}
-.find__card--krabi {
-  background-image: url("../img/krabi.webp");
-}
-.find__card--watervilla {
-  background-image: url("../img/watervilla.webp");
-}
-.find__card--beach {
-  background-image: url("../img/find-beach.webp");
-}
-.find__card--ocean {
-  background-image: url("../img/find-ocean.webp");
-}
-.find__card--boat {
-  background-image: url("../img/find-boat.webp");
 }
 .find__card-text {
-  position: relative;
+  width: 100%;
+  position: absolute;
+  top: 4rem;
   color: #FFFFFF;
   z-index: 1;
   display: flex;

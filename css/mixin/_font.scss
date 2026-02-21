@@ -91,6 +91,3 @@
     box-shadow: $x $y $blur $color;
 }
 
-@mixin rounded($radius: 2rem) {
-    border-radius: $radius;
-}

@@ -106,7 +106,7 @@
         }
 
         &__img {
-            @include rounded();
+            border-radius: 2rem;
             @include image-shadow($color: rgba(82, 155, 156, 0.57));
             width: 80%;
             margin-bottom: 3.5rem;
@@ -117,7 +117,7 @@
         width: 48%;
         // height: 50rem;
         aspect-ratio: 1 / 0.8;
-        @include rounded();
+        border-radius: 2rem;
         @include image-shadow($color: rgba(82, 155, 156, 0.57));
 
         @include tab {

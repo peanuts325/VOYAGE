@@ -44,14 +44,14 @@
     &-figure {
         display: inline-block;
         box-shadow: 1rem 1rem rgba(31, 16, 47, 0.2);
-        @include rounded();
+        border-radius: 2rem;
     }
 
 
     &-img {
         width: 100%;
         aspect-ratio: 3 / 2;
-        @include rounded();
+        border-radius: 2rem;
         transition: all .3s ease-in;
     }
 
@@ -66,7 +66,7 @@
 
     &-cat {
         border: 1px solid $textcolor-journal;
-        @include rounded(5rem);
+        border-radius: 5rem;
         padding: .5rem;
     }
 
@@ -104,7 +104,7 @@
             margin-bottom: 2rem;
             border: 2px solid $textcolor-journal-sub;
             padding: 1rem 2.7rem;
-            @include rounded(5rem);
+            border-radius: 5rem;
             transition: all 0.3s ease;
         }
 
@@ -122,17 +122,19 @@
 }
 
 .is-animate {
-   animation: .6s zoom-in;
+    animation: .6s zoom-in;
 }
 
 @keyframes zoom-in {
-   0% {
-    transform: scale(.8);
-   }
-   100% {
-     transform: none;
-   }
+    0% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: none;
+    }
 }
+
 .hidden {
     display: none;
 }
