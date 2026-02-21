@@ -240,27 +240,30 @@ $(function () {
     });
 });
 
-$(function () {
-    $('.voice__wrapper.slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: '20%',   // 左右に“少し見える”余白。px 指定もOK
-        speed: 600,
-        cssEase: 'ease',
-        adaptiveHeight: true,
-        arrows: true,
-        appendArrows: $('.arrow_box'),
-        prevArrow: '<button type="button" class="slide-arrow prev-arrow prev-arrow--voice" aria-label="前へ"></button>',
-        nextArrow: '<button type="button" class="slide-arrow next-arrow next-arrow--voice" aria-label="次へ"></button>',
-        responsive: [
-            { breakpoint: 800, settings: { centerPadding: '5%' } },
-            { breakpoint: 480, settings: { centerPadding: '0', slidesToShow: 1 } }
-        ]
-    });
-});
+const swiper = new Swiper('.swiper', {
+    loop: true,               // infinite: true 相当
+    slidesPerView: 1,         // slidesToShow: 1 相当
+    centeredSlides: true,     // centerMode: true 相当
+    speed: 600,               // speed: 600 相当
+    autoHeight: true,         // adaptiveHeight: true 相当
 
+    // 矢印の設定
+    navigation: {
+        nextEl: '.next-arrow--voice',
+        prevEl: '.prev-arrow--voice',
+    },
+
+    // レスポンシブ設定（breakpointsの数値の扱いがSlickと逆なので注意）
+    breakpoints: {
+        481: {
+            slidesPerView: 1,
+            spaceBetween: 20, // centerPaddingの代わりに余白で調整することが多い
+        },
+        801: {
+            // PCサイズの設定
+        }
+    }
+});
 
 // =================================================
 // Parallax .feature GSAP（ScrollTrigger）

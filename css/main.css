@@ -1550,12 +1550,12 @@ img {
   background: linear-gradient(45deg, #fa709a, #fee140);
 }
 
-.voice-slider {
+.swiper {
   position: relative;
   width: 100%;
 }
 
-.voice__wrapper.slider {
+.slider-wrapper {
   padding: 40px 0;
 }
 
@@ -1563,11 +1563,20 @@ img {
   background-color: #BAE4E7;
 }
 .voice__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
   background: #FFFFFF;
   padding: 30px;
-  width: 20rem;
   margin-inline: 50px;
-  position: relative;
+  max-width: 900px;
+}
+.voice__image {
+  width: 50%;
+}
+.voice___content {
+  width: 50%;
 }
 .voice__title {
   margin-bottom: 10px;
@@ -1589,47 +1598,6 @@ img {
 .voice__button {
   text-align: center;
   padding-block: 30px;
-}
-
-/* 少しずらしたボックス */
-.voice__card {
-  /* カードの見た目（お好みで） */
-  margin: 0 5rem 2rem;
-  /* 外側の余白（上下と中央配置） */
-  padding: 2.4rem;
-  /* 内側余白 */
-  background: none;
-  /* 元のボックス背景色なし */
-  border: 1px solid rgba(30, 73, 114, 0.8235294118);
-  /* 線の太さ（1px）、種類（実線）、色（#ccc） */
-  position: relative;
-  /* 配置（基準となる位置） */
-}
-.voice__card:after {
-  background-color: #e7fcfc;
-  /* ずらしたボックスの背景色 */
-  border: none;
-  /* 枠線なし */
-  content: "";
-  /* 擬似要素にコンテンツなし */
-  position: absolute;
-  /* 配置（ここを動かす） */
-  top: 7px;
-  /* 上から7pxずらす */
-  left: 7px;
-  /* 左から7pxずらす */
-  width: 100%;
-  /* 幅100%（親要素に合わせる） */
-  height: 100%;
-  /* 高さ100%（親要素に合わせる） */
-  z-index: -1;
-  /* 背景として後ろに表示 */
-}
-.voice__card {
-  /* pタグの余白 */
-}
-.voice__card p {
-  margin: 0;
 }
 
 @media screen and (max-width: 768px) {
