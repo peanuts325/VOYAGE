@@ -16,13 +16,13 @@ body {
     // 1rem = 10px
     box-sizing: border-box;
 
-    @include pc {
-        font-size: 56.25%;
-        /* 1rem = 9px */
-    }
-
-    @include tab {
-        font-size: 50%;
+    // @include pc {
+        //     /* 1rem = 9px */
+        // }
+        
+        @include tab {
+            font-size: 56.25%;
+        // font-size: ;0;;
         /* 1rem = 8px */
     }
 

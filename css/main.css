@@ -393,17 +393,10 @@ body {
   font-size: 62.5%;
   box-sizing: border-box;
 }
-@media screen and (max-width: 1210px) {
-  html,
-  body {
-    font-size: 56.25%;
-    /* 1rem = 9px */
-  }
-}
 @media screen and (max-width: 768px) {
   html,
   body {
-    font-size: 50%;
+    font-size: 56.25%;
     /* 1rem = 8px */
   }
 }
@@ -965,7 +958,7 @@ img {
   gap: 1rem;
 }
 .info__label {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   padding: 0.4rem 1rem;
   border-radius: 2rem;
   font-family: "Zen Maru Gothic", serif;
@@ -984,7 +977,7 @@ img {
   background-color: #7D88AE;
 }
 .info__text {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-family: "Zen Maru Gothic", serif;
   font-weight: 400;
   font-style: normal;
@@ -1078,15 +1071,6 @@ img {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .mainvisual__heading {
-    font-size: 4.8rem;
-  }
-  .mainvisual__container {
-    top: 50%;
-    left: 50%;
-  }
-}
 .wave-down-padding {
   padding-top: 24rem;
 }
@@ -1154,43 +1138,6 @@ img {
   color: #FFFFFF;
 }
 
-@media screen and (max-width: 768px) {
-  .section__header {
-    padding-block: 3rem;
-    margin-bottom: 5rem;
-  }
-  .section__title {
-    font-size: 3.2rem;
-  }
-  .section__title--plan {
-    line-height: 3rem;
-  }
-  .section__subtitle {
-    font-size: 1.6rem;
-  }
-  .section__subtitle--plan {
-    margin-bottom: 3rem;
-  }
-  .section__icon {
-    max-width: 15rem;
-  }
-  .section__icon--plan {
-    display: block;
-    margin-inline: auto;
-    margin-bottom: 1rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .section__title {
-    font-size: 2.4rem;
-  }
-  .section__subtitle {
-    font-size: 1.4rem;
-  }
-  .section__icon {
-    max-width: 12rem;
-  }
-}
 .split-section {
   position: relative;
 }
