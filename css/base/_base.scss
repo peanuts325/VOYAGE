@@ -17,25 +17,25 @@ body {
     box-sizing: border-box;
 
     // @include pc {
-        //     /* 1rem = 9px */
-        // }
-        
-        @include tab {
-            font-size: 56.25%;
+    //     /* 1rem = 9px */
+    // }
+
+    @include tab {
+        font-size: 56.25%;
         // font-size: ;0;;
         /* 1rem = 8px */
     }
 
-    @include sp {
-        font-size: 43.75%;
-        /* 1rem = 7px */
-    }
+    // @include sp {
+    //     font-size: 43.75%;
+    //     /* 1rem = 7px */
+    // }
 
-    @include smallsp {
-        font-size: 30.5%;
-        /* 1rem = 6px */
-    }
+    // @include smallsp {
+    //     font-size: 30.5%;
+    //     /* 1rem = 6px */
 }
+
 
 .inter-400 {
     font-family: "Inter", sans-serif;
