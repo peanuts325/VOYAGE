@@ -34,14 +34,15 @@
     position: fixed;
     top: 0;
     left: 0;
-    right:0;
+    right: 0;
     z-index: 10;
     transition: background-color 0.3s ease;
     padding: 2rem 5rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-  pointer-events: none;
+    pointer-events: none;
+
     img {
         filter:
             drop-shadow(0 0 8px rgba(0, 0, 0, .35)) drop-shadow(0 0 2px rgba(0, 0, 0, .35));
@@ -55,6 +56,7 @@
         }
     }
 }
+
 .pointer-events {
     pointer-events: auto;
 }
@@ -158,10 +160,10 @@
 .menu {
     position: fixed;
     top: 0;
+    bottom: 0;
     right: -50rem;
     width: 79.5%;
-    height: 100vh;
-    padding: 15rem 7rem 7rem;
+    padding: 10rem 7rem 7rem;
     transition: all 0.5s;
     z-index: 30;
     opacity: 0;
@@ -175,6 +177,9 @@
 
     &__item {
         margin-bottom: 4rem;
+        @include tab{
+            margin-bottom: 2rem;
+        }
     }
 
     &__link {
@@ -182,6 +187,11 @@
         @include title;
         font-size: 3.5rem;
         display: block;
+
+        @include tab {
+            font-size: 2.5rem;
+
+        }
 
         &:hover {
             opacity: 0.7;
@@ -198,15 +208,17 @@
 
     &__sublink {
         color: $textcolor-nav;
+        font-size: 1.9rem;
     }
 
     &__sns {
         margin-top: 4rem;
-        font-size: 3rem;
+        font-size: 2rem;
+        display: flex;
+        gap: 2rem;
 
         .fa-brands {
             color: $textcolor-nav;
-            margin-right: 5rem;
         }
     }
 }
